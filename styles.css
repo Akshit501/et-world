@@ -759,7 +759,7 @@ img {
   color: var(--ac);
 }
 
-/* Right Actions */
+/* Right Actions (Exact Reference image copy.png) */
 .masthead-right-actions {
   display: flex;
   flex-direction: column;
@@ -770,28 +770,29 @@ img {
 .masthead-top-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .btn-et-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 10px;
-  border: 1px solid #555555;
-  border-radius: 2px;
+  padding: 5px 12px;
+  border: 1.5px solid #111111;
+  border-radius: 4px;
   background: #ffffff;
   color: #111111;
   font-family: var(--font-sans);
-  font-size: 11.5px;
+  font-size: 13px;
   font-weight: 500;
   text-decoration: none;
+  line-height: 1.2;
   transition: all 0.15s ease;
 }
 
 :root[data-theme="dark"] .btn-et-outline {
   background: transparent;
-  border-color: #6b7280;
+  border-color: #d1d5db;
   color: #f3f4f6;
 }
 
@@ -802,12 +803,13 @@ img {
 
 .btn-et-signin {
   font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14.5px;
+  font-weight: 500;
   color: #111111;
   text-decoration: none;
-  margin-left: 6px;
+  margin-left: 8px;
   cursor: pointer;
+  line-height: 1.2;
   transition: color 0.15s ease;
 }
 
@@ -820,12 +822,15 @@ img {
 }
 
 .festive-sale-strip {
-  margin-top: 8px;
-  border-top: 1px solid #ffe8ec;
-  border-bottom: 1px solid #ffe8ec;
-  padding: 3px 0;
+  margin-top: 10px;
+  border-top: 1px solid #ffeef1;
+  border-bottom: 1px solid #ffeef1;
+  padding: 5px 0;
   width: 100%;
-  text-align: right;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 :root[data-theme="dark"] .festive-sale-strip {
@@ -835,23 +840,33 @@ img {
 
 .festive-sale-link {
   font-family: var(--font-sans);
-  font-size: 12.5px;
-  font-weight: 700;
-  color: #c41230;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  transition: color 0.15s ease;
+  justify-content: center;
+  gap: 5px;
+  transition: opacity 0.15s ease;
 }
 
 .festive-sale-link:hover {
-  color: var(--ac);
+  opacity: 0.85;
+}
+
+.sale-bold-text {
+  font-size: 14px;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -0.01em;
+}
+
+:root[data-theme="dark"] .sale-bold-text {
+  color: #ffffff;
 }
 
 .festive-arrow {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
+  color: #ed193b;
 }
 
 /* ==========================================================================

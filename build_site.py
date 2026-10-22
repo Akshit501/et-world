@@ -166,7 +166,7 @@ HTML_CONTENT = """<!DOCTYPE html>
         </div>
       </div>
 
-      <!-- Right: Action Buttons & Mega Festive Sale -->
+      <!-- Right: Action Buttons & Flat 50% Off Promo (Exact Reference image copy.png) -->
       <div class="masthead-right-actions">
         <div class="masthead-top-actions">
           <a href="#watchlist" class="btn-et-outline" id="mastheadWatchlistBtn">My Watchlist</a>
@@ -175,7 +175,7 @@ HTML_CONTENT = """<!DOCTYPE html>
         </div>
         <div class="festive-sale-strip">
           <a href="#festive-sale" class="festive-sale-link">
-            Mega Festive Sale <span class="festive-arrow">↗</span>
+            <span class="sale-bold-text">Flat 50% Off!</span> <span class="festive-arrow">↗</span>
           </a>
         </div>
       </div>
