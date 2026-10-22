@@ -648,10 +648,33 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   text-decoration: none;
-  color: #0b1118;
   line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.et-main-brand:hover {
+  opacity: 0.92;
+}
+
+.et-official-logo-img {
+  height: 44px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.et-main-brand:hover .et-official-logo-img {
+  transform: scale(1.02);
+}
+
+:root[data-theme="dark"] .et-main-brand {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 4px 14px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .et-red-box {
