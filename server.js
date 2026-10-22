@@ -45,6 +45,22 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, '127.0.0.1', () => {
-  console.log(`Server running at http://127.0.0.1:${PORT}/`);
+const os = require('os');
+function getLocalIp() {
+  const interfaces = os.networkInterfaces();
+  for (const name of Object.keys(interfaces)) {
+    for (const iface of interfaces[name]) {
+      if (iface.family === 'IPv4' && !iface.internal) {
+        return iface.address;
+      }
+    }
+  }
+  return 'localhost';
+}
+
+server.listen(PORT, '0.0.0.0', () => {
+  const localIp = getLocalIp();
+  console.log(`Server running locally: http://localhost:${PORT}/`);
+  console.log(`Open on your phone:     http://${localIp}:${PORT}/`);
 });
+

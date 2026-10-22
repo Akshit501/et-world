@@ -1,0 +1,73 @@
+{
+  "Science & Knowledge": [],
+  "India Global": [],
+  "Study Abroad": [],
+  "Climate & Environment": [],
+  "Lifestyle": [],
+  "United States": [
+    {
+      "title": "US Top Court Refuses Team Trump's Treatment Curbs On Transgender Inmates",
+      "image": "https://c.ndtvimg.com/2026-10/ojqf8918_us-supreme-court-reuters_625x300_22_October_26.jpg?im=FeatureCrop,algorithm=dnn,width=240,height=135"
+    },
+    {
+      "title": "Arizona University Fraternity Suspended After Female Student's Rape Charge",
+      "image": "https://c.ndtvimg.com/2026-10/vt84rsv8_arizona-university_625x300_22_October_26.jpeg"
+    },
+    {
+      "title": "US Justice Department Alleges Anti-Asian Bias At Ohio State University",
+      "image": "https://c.ndtvimg.com/2020-07/58i7ecs_ohio-state-university-reuters-650_625x300_09_July_20.jpg?im=FeatureCrop,algorithm=dnn,width=240,height=135"
+    },
+    {
+      "title": "Amazon Worker Accuses Executive Of Rape, Says Company Told Her To Stay Quiet",
+      "image": "https://c.ndtvimg.com/2022-11/qaisg0r_amazon_625x300_15_November_22.jpg?im=FeatureCrop,algorithm=dnn,width=240,height=135"
+    }
+  ],
+  "United Kingdom": [
+    {
+      "title": "Why British Agency MI5 Spied Their Own Health Service Founder For Decades",
+      "image": "https://c.ndtvimg.com/2026-10/lah9evc_nye-bevan_625x300_22_October_26.jpeg"
+    },
+    {
+      "title": "British Bodybuilder Dies After Collapsing On Stage Day Before 34th Birthday",
+      "image": "https://c.ndtvimg.com/2026-10/smlql7i4_mateusz-chmura_625x300_21_October_26.jpeg"
+    },
+    {
+      "title": "UK Bank Operations Disrupted After Power Outage Hits Google Cloud Services",
+      "image": "https://c.ndtvimg.com/2023-02/poj0cg2s_google_625x300_09_February_23.jpg?im=FaceCrop,algorithm=dnn,width=240,height=135"
+    },
+    {
+      "title": "Protest vs Counter-Protest In UK Amid Row Over Poll Body Chief Gyanesh Kumar",
+      "image": "https://c.ndtvimg.com/2026-10/agleo3to_london-protest_625x300_17_October_26.png?im=FeatureCrop,algorithm=dnn,width=240,height=135"
+    }
+  ],
+  "Middle East": [],
+  "Asia": [],
+  "Movies & Entertainment": [
+    {
+      "title": "'Daler Mehndi Doesn't Drink': Manoj Bajpayee Backs Singer Amid Viral Video Row",
+      "image": "https://c.ndtvimg.com/2026-10/7df3vkn_daler_625x300_22_October_26.png?im=FitAndFill,algorithm=dnn,width=240,height=135"
+    },
+    {
+      "title": "Bassist Mohini Dey At NDTV World Summit 2026: 'Fortunate To Be Born In India '",
+      "image": "https://c.ndtvimg.com/2026-10/ssgj77f8_mohini-dey_625x300_22_October_26.jpeg?im=FeatureCrop,algorithm=dnn,width=240,height=135"
+    },
+    {
+      "title": "Mika Singh Demands Apology From Uttarakhand Minister Over Daler Mehndi Row",
+      "image": "https://c.ndtvimg.com/2026-10/b5ir1n8s_daler-mehndi_625x300_22_October_26.jpg?im=FeatureCrop,algorithm=dnn,width=240,height=135"
+    }
+  ],
+  "Gadgets & Technology": [
+    {
+      "title": "OnePlus Ace 7 and Ace 7 Pro Launch Date Officially Confirmed",
+      "image": "https://i.gadgets360cdn.com/large/oneplus_ace_6_china_thumb_1761560766801.jpg"
+    },
+    {
+      "title": "Vivo Buds Ultra Announced With Up to 60dB ANC, Up to 50 Hours of Total Battery Life",
+      "image": "https://i.gadgets360cdn.com/large/vivo_buds_ultra_vivo_thumb_1792646716645.jpg"
+    },
+    {
+      "title": "iPhone Duo Will Soon Get These Notable Software Features",
+      "image": "https://i.gadgets360cdn.com/large/iphone_duo_thumb_1792120824651.jpg"
+    }
+  ]
+}
