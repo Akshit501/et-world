@@ -336,7 +336,7 @@ HTML_CONTENT = """<!DOCTYPE html>
           <span class="sml-tag">A WORLD BETWEEN ORDERS</span>
         </div>
         <div class="banner-live-callout">
-          <span class="watch-live-text">WATCH LIVE</span>
+          <span class="watch-live-text"><span class="banner-live-dot">●</span> WATCH LIVE</span>
           <span class="only-on-text">ONLY ON <strong>THE ECONOMIC TIMES</strong></span>
         </div>
       </div>
