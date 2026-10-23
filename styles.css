@@ -2849,15 +2849,42 @@ img {
 }
 
 /* ==========================================================================
-   PORTAL SECTIONS (Offbeat, India, Opinion, Shorts, Videos)
+   PORTAL SECTIONS (Signature Economic Times Peach Container Background)
+   Every section across the site uniformly wears the signature ET peach container!
    ========================================================================= */
 .portal-section {
-  background: var(--sf);
-  border: 1px solid var(--ln);
-  border-radius: var(--radius-md);
-  padding: 18px;
-  margin-bottom: 26px;
+  background: var(--et-peach-bg) !important;
+  border: 1px solid var(--et-peach-border) !important;
+  border-radius: 8px !important;
+  padding: 22px 24px !important;
+  margin-bottom: 28px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   width: 100%;
+  box-sizing: border-box;
+}
+
+:root[data-theme="dark"] .portal-section {
+  background: #18131a !important;
+  border-color: #3b2832 !important;
+}
+
+/* Eliminate nested double background/borders in sections using .peach-container-wrap */
+.portal-section .peach-container-wrap {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Seamless Dividers inside Peach Sections */
+.portal-section .sec-divider,
+.portal-section .lead-list-col,
+.portal-section .lead-list-item,
+.portal-section .list-story-item,
+.portal-section .duo-playcard-col:first-child {
+  border-color: var(--et-peach-border, #e4ccc4) !important;
 }
 
 /* Specific Section Backgrounds matching The Economic Times */
@@ -9497,4 +9524,62 @@ img {
   .sports-cat-tabs {
     gap: 12px;
   }
+}
+
+/* Harmonize World Sports to wear the signature ET Peach Background */
+.sports-dark-hub {
+  background-color: var(--et-peach-bg) !important;
+  border: 1px solid var(--et-peach-border) !important;
+  border-radius: 8px !important;
+  padding: 22px 24px !important;
+  margin-bottom: 28px !important;
+  color: #111111 !important;
+}
+
+.sports-dark-hub .sports-header-row {
+  border-bottom: 1px solid var(--et-peach-border, #e4ccc4) !important;
+}
+
+.sports-dark-hub .sports-heading a {
+  color: #111111 !important;
+}
+
+.sports-dark-hub .sports-heading .sec-chevron {
+  color: #ed193b !important;
+}
+
+.sports-dark-hub .sports-tab {
+  color: #6b7280 !important;
+}
+
+.sports-dark-hub .sports-tab:hover {
+  color: #111111 !important;
+}
+
+.sports-dark-hub .sports-tab.active {
+  color: #111111 !important;
+  border-bottom-color: #ed193b !important;
+}
+
+.sports-dark-hub .sports-hero-headline a {
+  color: #111111 !important;
+}
+
+.sports-dark-hub .sports-hero-headline a:hover {
+  color: #ed193b !important;
+}
+
+.sports-dark-hub .sports-stack-title a {
+  color: #111111 !important;
+}
+
+.sports-dark-hub .sports-stack-title a:hover {
+  color: #ed193b !important;
+}
+
+/* Maintain dark burgundy on Featured Series Podcasts as requested in previous prompt */
+.portal-section.featured-series-section {
+  background-color: #14080b !important;
+  border-color: #261118 !important;
+  color: #ffffff !important;
 }
