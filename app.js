@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGutterAds();
   initScreenshotAds();
   initTopBarAndModals();
+  initIndicesAndDashboards();
 });
 
 /* ==========================================================================
