@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMastheadMeta();
   initGutterAds();
   initScreenshotAds();
+  initTopBarAndModals();
 });
 
 /* ==========================================================================
@@ -682,4 +683,294 @@ function initScreenshotAds() {
       showToast('ET HR Excellence Awards 2026: Nomination portal opened.');
     });
   }
+}
+
+/* ==========================================================================
+   TOP BAR & INTERACTIVE MODALS CONTROLLER (Reference image copy 2.png)
+   ========================================================================== */
+function initTopBarAndModals() {
+  // Modal Elements
+  const signInModal = document.getElementById('etSignInModal');
+  const watchlistModal = document.getElementById('etWatchlistModal');
+  const marketDataModal = document.getElementById('etMarketDataModal');
+  const masterclassModal = document.getElementById('etMasterclassModal');
+  const allModals = [signInModal, watchlistModal, marketDataModal, masterclassModal].filter(Boolean);
+
+  function openModal(modal) {
+    if (!modal) return;
+    allModals.forEach(m => m.classList.remove('open'));
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('open');
+    const anyStillOpen = allModals.some(m => m.classList.contains('open'));
+    if (!anyStillOpen) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  function closeAllModals() {
+    allModals.forEach(m => m.classList.remove('open'));
+    document.body.style.overflow = '';
+  }
+
+  // Bind close buttons
+  document.getElementById('closeSignInModalBtn')?.addEventListener('click', () => closeModal(signInModal));
+  document.getElementById('closeWatchlistModalBtn')?.addEventListener('click', () => closeModal(watchlistModal));
+  document.getElementById('closeMarketDataModalBtn')?.addEventListener('click', () => closeModal(marketDataModal));
+  document.getElementById('closeMasterclassModalBtn')?.addEventListener('click', () => closeModal(masterclassModal));
+
+  // Close on outside click
+  allModals.forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  // Close on Escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAllModals();
+    }
+  });
+
+  // Top Search Pill Interaction
+  const topSearchInput = document.getElementById('topSearchInput');
+  const searchModal = document.getElementById('searchModal');
+  const modalSearchInput = document.getElementById('modalSearchInput');
+
+  if (topSearchInput) {
+    topSearchInput.addEventListener('focus', () => {
+      if (searchModal) {
+        searchModal.classList.add('open');
+        if (modalSearchInput) {
+          modalSearchInput.value = topSearchInput.value;
+          modalSearchInput.focus();
+        }
+      }
+    });
+
+    topSearchInput.addEventListener('input', (e) => {
+      if (searchModal) {
+        searchModal.classList.add('open');
+        if (modalSearchInput) {
+          modalSearchInput.value = e.target.value;
+          modalSearchInput.focus();
+          modalSearchInput.dispatchEvent(new Event('input'));
+        }
+      }
+    });
+  }
+
+  // Benchmarks Live Trigger -> Market Data Modal
+  const topSensexBenchmark = document.getElementById('topSensexBenchmark');
+  if (topSensexBenchmark) {
+    topSensexBenchmark.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(marketDataModal);
+    });
+  }
+
+  // Category Bar "Market Data" Button -> Market Data Modal
+  const catMarketDataBtn = document.getElementById('catMarketDataBtn');
+  if (catMarketDataBtn) {
+    catMarketDataBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(marketDataModal);
+    });
+  }
+
+  // Category Bar "Masterclass" Button -> Masterclass Modal
+  const catMasterclassBtn = document.getElementById('catMasterclassBtn');
+  if (catMasterclassBtn) {
+    catMasterclassBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(masterclassModal);
+    });
+  }
+
+  // Masthead Sign In Button -> Sign In Modal
+  const mastheadSignInBtn = document.getElementById('mastheadSignInBtn');
+  if (mastheadSignInBtn) {
+    mastheadSignInBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(signInModal);
+    });
+  }
+
+  // Masthead Watchlist Button -> Watchlist Modal
+  const mastheadWatchlistBtn = document.getElementById('mastheadWatchlistBtn');
+  if (mastheadWatchlistBtn) {
+    mastheadWatchlistBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(watchlistModal);
+    });
+  }
+
+  // Featured Fund Invest Button
+  const fundInvestBtn = document.getElementById('fundInvestBtn');
+  if (fundInvestBtn) {
+    fundInvestBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('📈 UTI Aggressive Hybrid: Instant SIP / Lump Sum portal loaded.');
+    });
+  }
+
+  // Festive Sale Link
+  const festiveSaleLink = document.getElementById('festiveSaleLink');
+  if (festiveSaleLink) {
+    festiveSaleLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('🎉 Mega Festive Sale: 50% discount coupon applied on ETPrime Annual Plan!');
+    });
+  }
+
+  // Watchlist Add Symbol Interaction
+  const watchlistAddBtn = document.getElementById('addWatchlistBtn');
+  const watchlistSearchInput = document.getElementById('watchlistSearchInput');
+  const watchlistItemsContainer = document.getElementById('watchlistItemsContainer');
+
+  if (watchlistAddBtn && watchlistSearchInput && watchlistItemsContainer) {
+    function addSymbol() {
+      const sym = watchlistSearchInput.value.trim().toUpperCase();
+      if (!sym) return;
+
+      const randomPrice = (Math.random() * 2000 + 100).toFixed(2);
+      const isUp = Math.random() > 0.4;
+      const changePct = (Math.random() * 2.5).toFixed(2);
+
+      const row = document.createElement('div');
+      row.className = 'wl-row';
+      row.innerHTML = `
+        <div class="wl-info">
+          <strong class="wl-sym">${sym}</strong>
+          <span class="wl-sub">Tracked Symbol · Live Feed</span>
+        </div>
+        <div class="wl-metric">
+          <span class="wl-price">₹${randomPrice}</span>
+          <span class="wl-change ${isUp ? 'up' : 'down'}">${isUp ? '▲ +' : '↓ -'}${changePct}%</span>
+        </div>
+      `;
+      watchlistItemsContainer.prepend(row);
+      watchlistSearchInput.value = '';
+      showToast(`Added ${sym} to your active Watchlist!`);
+    }
+
+    watchlistAddBtn.addEventListener('click', addSymbol);
+    watchlistSearchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        addSymbol();
+      }
+    });
+  }
+
+  // Market Data Modal Tabs Interaction
+  const mdataTabs = document.querySelectorAll('#marketDataTabs .mdata-tab');
+  const mdataContent = document.getElementById('marketDataContent');
+
+  const marketDatasets = {
+    indices: `
+      <table class="mdata-table">
+        <thead>
+          <tr><th>Instrument</th><th>LTP</th><th>Change</th><th>% Change</th><th>High</th><th>Low</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>SENSEX</strong></td><td>72,792.48</td><td class="diff-dn">-456.90</td><td class="diff-dn">-0.62%</td><td>73,310.20</td><td>72,680.15</td></tr>
+          <tr><td><strong>NIFTY 50</strong></td><td>25,482.40</td><td class="diff-up">+114.60</td><td class="diff-up">+0.45%</td><td>25,510.80</td><td>25,390.10</td></tr>
+          <tr><td><strong>S&amp;P 500</strong></td><td>5,864.67</td><td class="diff-up">+23.25</td><td class="diff-up">+0.40%</td><td>5,872.10</td><td>5,840.30</td></tr>
+          <tr><td><strong>NASDAQ 100</strong></td><td>20,385.12</td><td class="diff-up">+145.20</td><td class="diff-up">+0.72%</td><td>20,410.50</td><td>20,240.00</td></tr>
+          <tr><td><strong>FTSE 100</strong></td><td>8,243.80</td><td class="diff-dn">-18.30</td><td class="diff-dn">-0.22%</td><td>8,265.40</td><td>8,230.10</td></tr>
+        </tbody>
+      </table>
+    `,
+    gainers: `
+      <table class="mdata-table">
+        <thead>
+          <tr><th>Stock</th><th>LTP</th><th>Change</th><th>% Change</th><th>Volume</th><th>Sector</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>TATA MOTORS</strong></td><td>₹984.50</td><td class="diff-up">+45.20</td><td class="diff-up">+4.81%</td><td>14.2M</td><td>Auto</td></tr>
+          <tr><td><strong>ADANI PORTS</strong></td><td>₹1,420.10</td><td class="diff-up">+53.40</td><td class="diff-up">+3.91%</td><td>8.6M</td><td>Infra</td></tr>
+          <tr><td><strong>SUN PHARMA</strong></td><td>₹1,745.00</td><td class="diff-up">+54.10</td><td class="diff-up">+3.20%</td><td>4.1M</td><td>Pharma</td></tr>
+          <tr><td><strong>COAL INDIA</strong></td><td>₹512.30</td><td class="diff-up">+14.20</td><td class="diff-up">+2.85%</td><td>11.0M</td><td>Energy</td></tr>
+        </tbody>
+      </table>
+    `,
+    losers: `
+      <table class="mdata-table">
+        <thead>
+          <tr><th>Stock</th><th>LTP</th><th>Change</th><th>% Change</th><th>Volume</th><th>Sector</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>INFOSYS</strong></td><td>₹1,842.00</td><td class="diff-dn">-39.50</td><td class="diff-dn">-2.10%</td><td>9.4M</td><td>IT Services</td></tr>
+          <tr><td><strong>WIPRO</strong></td><td>₹528.10</td><td class="diff-dn">-9.70</td><td class="diff-dn">-1.80%</td><td>6.2M</td><td>IT Services</td></tr>
+          <tr><td><strong>HDFC BANK</strong></td><td>₹1,678.40</td><td class="diff-dn">-25.60</td><td class="diff-dn">-1.50%</td><td>18.1M</td><td>Banking</td></tr>
+          <tr><td><strong>AXIS BANK</strong></td><td>₹1,180.20</td><td class="diff-dn">-14.30</td><td class="diff-dn">-1.20%</td><td>7.9M</td><td>Banking</td></tr>
+        </tbody>
+      </table>
+    `,
+    commodities: `
+      <table class="mdata-table">
+        <thead>
+          <tr><th>Commodity / FX</th><th>LTP</th><th>Change</th><th>% Change</th><th>Unit</th><th>Trend</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>BRENT CRUDE</strong></td><td>$74.28</td><td class="diff-dn">-0.62</td><td class="diff-dn">-0.83%</td><td>Barrel</td><td>Bearish</td></tr>
+          <tr><td><strong>GOLD (10g)</strong></td><td>₹78,450</td><td class="diff-up">+240.00</td><td class="diff-up">+0.31%</td><td>10 Grams</td><td>Bullish</td></tr>
+          <tr><td><strong>SILVER (1kg)</strong></td><td>₹94,800</td><td class="diff-up">+650.00</td><td class="diff-up">+0.69%</td><td>1 Kg</td><td>Bullish</td></tr>
+          <tr><td><strong>USD / INR</strong></td><td>₹84.06</td><td class="diff-up">+0.02</td><td class="diff-up">+0.02%</td><td>Currency</td><td>Stable</td></tr>
+          <tr><td><strong>EUR / INR</strong></td><td>₹91.24</td><td class="diff-dn">-0.18</td><td class="diff-dn">-0.20%</td><td>Currency</td><td>Mild Soft</td></tr>
+        </tbody>
+      </table>
+    `
+  };
+
+  mdataTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      mdataTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const category = tab.dataset.tab;
+      if (mdataContent && marketDatasets[category]) {
+        mdataContent.innerHTML = marketDatasets[category];
+      }
+    });
+  });
+
+  // Masterclass Cohort Enrollment buttons
+  document.querySelectorAll('.mc-enroll-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const course = btn.dataset.course || 'Executive Program';
+      showToast(`🎓 Enrolled in "${course}" with Flat 50% Festive Discount applied!`);
+      closeModal(masterclassModal);
+    });
+  });
+
+  // Sign In Form Submission
+  window.handleSignInSubmit = function() {
+    const input = document.getElementById('signInInput');
+    const val = input ? input.value.trim() : '';
+    showToast(`✓ Welcome to The Economic Times! Verification code sent to ${val || 'your device'}.`);
+    setTimeout(() => {
+      closeModal(signInModal);
+      if (input) input.value = '';
+    }, 1200);
+  };
+
+  // Social Sign In buttons
+  document.getElementById('signInGoogleBtn')?.addEventListener('click', () => {
+    showToast('✓ Signed in successfully with Google account.');
+    setTimeout(() => closeModal(signInModal), 1000);
+  });
+
+  document.getElementById('signInAppleBtn')?.addEventListener('click', () => {
+    showToast('✓ Signed in successfully with Apple ID.');
+    setTimeout(() => closeModal(signInModal), 1000);
+  });
 }

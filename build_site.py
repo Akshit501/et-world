@@ -102,110 +102,69 @@ HTML_CONTENT = """<!DOCTYPE html>
     </div>
   </aside>
 
-  <nav class="channel-bar" aria-label="Network Channels">
-    <div class="channel-bar-in container-fit">
-      <div class="channel-links">
-        <a href="#et" class="ch-link">THE ECONOMIC TIMES</a>
-        <a href="#world" class="ch-link on">WORLD</a>
-        <a href="#markets" class="ch-link">MARKETS</a>
-        <a href="#et-prime" class="ch-link prime-chip">ET PRIME</a>
-        <a href="#wealth" class="ch-link">WEALTH</a>
-        <a href="#mutual-funds" class="ch-link">MUTUAL FUNDS</a>
-        <a href="#tech" class="ch-link">TECH</a>
-        <a href="#auto" class="ch-link">AUTO</a>
-        <a href="#opinion" class="ch-link">OPINION</a>
-        <a href="#podcasts" class="ch-link">PODCASTS</a>
-        <a href="#leadership" class="ch-link">LEADERSHIP</a>
-        <a href="#summits" class="ch-link">SUMMITS</a>
-        <a href="#et-now" class="ch-link">ET NOW</a>
-      </div>
-      <div class="channel-bar-actions">
-        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
-          <span class="theme-icon light-icon">☀️ Light</span>
-          <span class="theme-icon dark-icon">🌙 Dark</span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Primary ET World Regional Navigation Header -->
-  <header class="hd" id="mainHeader">
-    <div class="in container-fit">
-      
-      <!-- Left: Hamburger Menu -->
-      <div class="header-left-tools">
-        <button class="menu-search-btn" id="menuToggleBtn" aria-label="Toggle Menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Center-Left: Iconic ET WORLD Logo -->
-      <a href="#" class="brand-logo" id="siteLogo">
-        <span class="et-badge">ET</span>
-        <span class="logo-world">
-          W<span class="globe-o"><span class="globe-inner"></span></span>RLD
-        </span>
-      </a>
-
-      <!-- Center: Edition Navigation Links -->
-      <nav class="nav" id="mainNav" aria-label="Regional Editions">
-        <a href="#us" class="nav-link">US</a>
-        <a href="#uk" class="nav-link">UK</a>
-        <a href="#middle-east" class="nav-link">Middle East</a>
-        <a href="#india-global" class="nav-link on">India Global</a>
-        <a href="#asia" class="nav-link">Asia</a>
-        <a href="#europe" class="nav-link">Europe</a>
-        <a href="#australia" class="nav-link">Australia</a>
-        <a href="#americas" class="nav-link">Americas</a>
-        <a href="#africa" class="nav-link">Africa</a>
-        <a href="#videos-section" class="nav-link">Videos</a>
-        <a href="#sports-section" class="nav-link">Sports</a>
-        <a href="#bookmarks" class="nav-link bookmark-icon" id="headerBookmarkBtn" title="Bookmarks">≡♡</a>
-      </nav>
-
-      <!-- Right: Date & Time + User Profile Avatar -->
-      <div class="header-right-meta">
-        <div class="header-datetime" id="headerDateTime">
-          October 22, 2026<br>
-          <span class="header-time">11:11 AM IST</span>
-        </div>
-        <button class="usr-avatar-btn" id="userProfileBtn" aria-label="User Account" title="User Profile">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
-        </button>
-      </div>
-
-    </div>
-  </header>
-
   <!-- =====================================================================
-       THE ECONOMIC TIMES OFFICIAL MASTHEAD (Permanent, Reference Screenshot)
+       TIER 1: BENCHMARKS LIVE, FEATURED FUNDS & PILL SEARCH BAR (Reference image copy 2.png)
        ===================================================================== -->
-  <div class="et-masthead-section" id="etOfficialMasthead">
-    <div class="container-fit masthead-container">
-      
-      <!-- Left Spacer for Perfect Center Balancing -->
-      <!-- Left: Sponsored Partner Ad Badge (Fills Left Empty Space) -->
-      <div class="masthead-left-ad">
-        <a href="#partner-offer" class="masthead-ad-card" id="mastheadAdLink" title="Sponsored Offer">
-          <span class="m-ad-label">ADVERTISEMENT</span>
-          <div class="m-ad-body">
-            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=120&auto=format&fit=crop&q=80" alt="HDFC Sky Global Trading" class="m-ad-thumb">
-            <div class="m-ad-copy">
-              <span class="m-ad-brand">HDFC SKY</span>
-              <strong class="m-ad-headline">0% Brokerage on US Stocks</strong>
-              <span class="m-ad-cta">Open Account →</span>
-            </div>
+  <div class="et-top-benchmarks-strip" id="etTopBenchmarksStrip">
+    <div class="container-fit top-benchmarks-inner">
+      <div class="benchmarks-group">
+        <!-- Sensex Benchmark Live -->
+        <a href="#markets" class="bm-block bm-sensex" id="topSensexBenchmark" title="View Sensex Benchmark">
+          <div class="bm-label-row">
+            <span class="bm-label-title">BENCHMARKS</span>
+            <span class="bm-live-badge">LIVE</span>
+          </div>
+          <div class="bm-data-row">
+            <span class="bm-name">Sensex</span>
+            <span class="bm-val">72,792.48</span>
+            <span class="bm-change down"><span class="bm-arr">↓</span>-456.9</span>
           </div>
         </a>
+
+        <div class="bm-v-divider"></div>
+
+        <!-- Featured Funds 5Y Return UTI -->
+        <div class="bm-block bm-funds">
+          <div class="bm-label-row">
+            <span class="bm-label-title">FEATURED FUNDS</span>
+            <span class="bm-stars" aria-label="5 stars">★★★★★</span>
+            <span class="bm-label-sub">5Y RETURN</span>
+          </div>
+          <div class="bm-data-row">
+            <a href="#mutual-funds" class="bm-fund-name" id="topFundLink" title="UTI Aggressive Hybrid Fund">UTI Aggressive Hybrid ...</a>
+            <span class="bm-change up"><span class="bm-arr">↑</span> 8.69 %</span>
+            <button class="bm-invest-btn" id="fundInvestBtn" title="Invest in UTI Aggressive Hybrid Fund">INVEST NOW</button>
+          </div>
+        </div>
       </div>
 
-      <!-- Center: The Economic Times Official Logo & Edition / Date Subtitle -->
+      <!-- Right Search Pill Bar -->
+      <div class="top-search-col">
+        <div class="top-search-pill" id="topSearchPill">
+          <svg class="search-red-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ed193b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="topSearchInput" class="search-pill-input" placeholder="Search Stock Quotes, News, Mutual Funds and more" autocomplete="off" aria-label="Search Stock Quotes, News, Mutual Funds and more">
+        </div>
+        <button class="top-theme-toggle" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle Theme">
+          <span class="theme-icon light-icon">☀️</span>
+          <span class="theme-icon dark-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       TIER 2: THE ECONOMIC TIMES MASTHEAD (Reference image copy 2.png)
+       ===================================================================== -->
+  <header class="et-masthead-section" id="etOfficialMasthead">
+    <div class="container-fit masthead-container">
+      
+      <!-- Left: Balanced Empty Space -->
+      <div class="masthead-left-spacer"></div>
+
+      <!-- Center: Logo & Edition / Date Subtitle -->
       <div class="masthead-center">
         <a href="/" class="et-main-brand" aria-label="The Economic Times">
           <img src="image.png" alt="The Economic Times" class="et-official-logo-img">
@@ -215,70 +174,89 @@ HTML_CONTENT = """<!DOCTYPE html>
             English Edition <span class="caret-down">▾</span>
           </span>
           <span class="meta-divider">|</span>
-          <span class="meta-datetime" id="mastheadDateTime">22 October, 2026, 01:17 PM IST</span>
+          <span class="meta-datetime" id="mastheadDateTime">23 October, 2026, 11:16 AM IST</span>
           <span class="meta-divider">|</span>
           <a href="#epaper" class="meta-epaper-link">Today's ePaper</a>
         </div>
       </div>
 
-      <!-- Right: Action Buttons & Flat 50% Off Promo (Exact Reference image copy.png) -->
+      <!-- Right: Action Buttons & Mega Festive Sale -->
       <div class="masthead-right-actions">
         <div class="masthead-top-actions">
-          <a href="#watchlist" class="btn-et-outline" id="mastheadWatchlistBtn">My Watchlist</a>
-          <a href="#subscribe" class="btn-et-outline" id="mastheadSubscribeBtn">Subscribe</a>
-          <a href="#signin" class="btn-et-signin" id="mastheadSignInBtn">Sign In</a>
+          <button class="btn-et-outline" id="mastheadWatchlistBtn">My Watchlist</button>
+          <button class="btn-et-outline" id="mastheadSubscribeBtn">Subscribe</button>
+          <button class="btn-et-signin" id="mastheadSignInBtn">Sign In</button>
         </div>
         <div class="festive-sale-strip">
-          <a href="#festive-sale" class="festive-sale-link">
-            <span class="sale-bold-text">Flat 50% Off!</span> <span class="festive-arrow">↗</span>
+          <a href="#festive-sale" class="festive-sale-link" id="festiveSaleLink">
+            <span class="sale-festive-text">Mega Festive Sale</span> <span class="festive-arrow">↗</span>
           </a>
         </div>
       </div>
 
     </div>
-  </div>
+  </header>
 
-  <!-- ET Live Global Financial Markets Ticker (Signature Economic Times Feature) -->
-  <div class="et-ticker-bar" aria-label="Global Financial Markets">
-    <div class="ticker-inner container-fit">
-      <div class="ticker-tag">
-        <span class="live-dot-et"></span> ET MARKETS
+  <!-- =====================================================================
+       TIER 3: PEACH CATEGORY NAVIGATION BAR (Reference image copy 2.png)
+       ===================================================================== -->
+  <nav class="et-peach-catbar" id="etCategoryNav" aria-label="Primary Navigation">
+    <div class="container-fit catbar-inner">
+      <button class="cat-hamburger-btn" id="menuToggleBtn" aria-label="Open Navigation Menu" title="Browse All Sections">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="catbar-links-scroll" id="catbarLinksScroll">
+        <a href="/" class="cat-item cat-home-tab active" title="ET Home">Home</a>
+        <a href="#et-prime" class="cat-item cat-prime-chip" title="ET Prime"><span class="cat-prime-badge">▶</span>ETPrime</a>
+        <a href="#markets" class="cat-item" title="Markets">Markets</a>
+        <a href="#market-data" class="cat-item cat-market-data-btn" id="catMarketDataBtn" title="Market Data"><span class="cat-chart-icon">📊</span>Market Data</a>
+        <a href="#masterclass" class="cat-item cat-masterclass-tab" id="catMasterclassBtn" title="ET Masterclass Executive Learning">Masterclass</a>
+        <a href="#news" class="cat-item" title="News">News</a>
+        <a href="#industry" class="cat-item" title="Industry">Industry</a>
+        <a href="#sme" class="cat-item" title="SME">SME</a>
+        <a href="#politics" class="cat-item" title="Politics">Politics</a>
+        <a href="#wealth" class="cat-item" title="Wealth">Wealth</a>
+        <a href="#mutual-funds" class="cat-item" title="MF">MF</a>
+        <a href="#tech" class="cat-item" title="Tech">Tech</a>
+        <a href="#ai" class="cat-item" title="AI">AI</a>
+        <a href="#world" class="cat-item" title="World">World</a>
+        <a href="#opinion" class="cat-item" title="Opinion">Opinion</a>
+        <a href="#nri" class="cat-item" title="NRI">NRI</a>
+        <a href="#panache" class="cat-item" title="Panache">Panache</a>
       </div>
-      <div class="ticker-scroll" id="marketTickerTrack">
-        <div class="ticker-item">
-          <span class="t-name">NIFTY 50</span>
-          <span class="t-val">25,482.40</span>
-          <span class="t-change up">▲ +114.60 (+0.45%)</span>
-        </div>
-        <div class="ticker-item">
-          <span class="t-name">SENSEX</span>
-          <span class="t-val">83,195.20</span>
-          <span class="t-change up">▲ +350.65 (+0.42%)</span>
-        </div>
-        <div class="ticker-item">
-          <span class="t-name">S&amp;P 500</span>
-          <span class="t-val">5,864.67</span>
-          <span class="t-change up">▲ +23.25 (+0.40%)</span>
-        </div>
-        <div class="ticker-item">
-          <span class="t-name">FTSE 100</span>
-          <span class="t-val">8,243.80</span>
-          <span class="t-change down">▼ -18.30 (-0.22%)</span>
-        </div>
-        <div class="ticker-item">
-          <span class="t-name">BRENT CRUDE</span>
-          <span class="t-val">$74.28</span>
-          <span class="t-change down">▼ -0.62 (-0.83%)</span>
-        </div>
-        <div class="ticker-item">
-          <span class="t-name">GOLD (10g)</span>
-          <span class="t-val">₹78,450</span>
-          <span class="t-change up">▲ +240 (+0.31%)</span>
-        </div>
-        <div class="ticker-item">
-          <span class="t-name">USD / INR</span>
-          <span class="t-val">₹84.06</span>
-          <span class="t-change up">▲ +0.02</span>
+
+      <button class="cat-more-btn" id="catMoreBtn" aria-label="More categories" title="More categories">⋮</button>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+       TIER 4: TRENDING TOPICS SUB-NAVIGATION STRIP (Reference image copy 2.png)
+       ===================================================================== -->
+  <div class="et-trending-subbar" aria-label="Trending Topics">
+    <div class="container-fit trending-inner">
+      <div class="trending-scroll" id="trendingScroll">
+        <a href="#news-live" class="trend-item trend-live" title="Live Coverage">News Live!</a>
+        <a href="#us-midterms" class="trend-item" title="US Midterms Special Coverage"><span class="trend-bold">US</span> <span class="trend-red">Midterms</span></a>
+        <a href="#msme-awards" class="trend-item" title="MSME Awards 2026">MSME Awards</a>
+        <a href="#fokw-summit" class="trend-item" title="Future of Knowledge Work Summit">FOKW Summit</a>
+        <a href="#et-wealth-expo" class="trend-item" title="ET Wealth Investment Expo"><span class="trend-bold">ET</span> <span class="trend-red">Wealth Expo</span></a>
+        <a href="#ai-winter-camp" class="trend-item" title="AI Winter Camp 2026">AI Winter Camp</a>
+        <a href="#astrology" class="trend-item" title="Weekly Horoscopes & Astrology">Astrology</a>
+        <a href="#biz-growth" class="trend-item" title="Business Growth Summit">Biz Growth Summit</a>
+        <a href="#advertise" class="trend-item" title="Advertise with The Economic Times">Advertise on ET</a>
+        <div class="trend-item trend-spotlight-dropdown" id="spotlightDropdownBtn" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" title="Spotlight Initiatives">
+          Spotlight <span class="spotlight-caret">▾</span>
+          <div class="spotlight-menu" id="spotlightMenu">
+            <a href="#spotlight-gbs">ET Global Business Summit</a>
+            <a href="#spotlight-40u40">ET 40 Under Forty</a>
+            <a href="#spotlight-poi">The Power of Ideas</a>
+            <a href="#spotlight-women">Women Ahead Awards</a>
+          </div>
         </div>
       </div>
     </div>
@@ -334,45 +312,6 @@ HTML_CONTENT = """<!DOCTYPE html>
 
   <!-- Main Container: Centered with Proper Margin and Fit to Border -->
   <main id="app" class="main-content container-fit">
-
-        <div class="banner-live-callout">
-          <span class="watch-live-text"><span class="banner-live-dot">●</span> WATCH LIVE</span>
-          <span class="only-on-text">ONLY ON <strong>THE ECONOMIC TIMES</strong></span>
-        </div>
-      </div>
-
-      <div class="banner-center-keynote">
-        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=150&auto=format&fit=crop&q=80" alt="PM Narendra Modi" class="modi-avatar" loading="eager">
-        <div class="keynote-caption">
-          <span class="keynote-label">Keynote address by</span>
-          <strong class="keynote-speaker">SHRI. NARENDRA MODI</strong>
-          <span class="keynote-role">Hon'ble Prime Minister of India</span>
-        </div>
-      </div>
-
-      <div class="banner-speakers-strip">
-        <div class="spk-item">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=80" alt="Dr S Jaishankar">
-          <span class="spk-name">Dr. S. Jaishankar</span>
-        </div>
-        <div class="spk-item">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&auto=format&fit=crop&q=80" alt="Sheikh Nahyan">
-          <span class="spk-name">Sheikh Nahyan</span>
-        </div>
-        <div class="spk-item">
-          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&auto=format&fit=crop&q=80" alt="Nikhil Kamath">
-          <span class="spk-name">Nikhil Kamath</span>
-        </div>
-        <div class="spk-item">
-          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=80&auto=format&fit=crop&q=80" alt="Mohini Dey">
-          <span class="spk-name">Mohini Dey</span>
-        </div>
-        <div class="spk-item">
-          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&auto=format&fit=crop&q=80" alt="Michael Sabia">
-          <span class="spk-name">Michael Sabia</span>
-        </div>
-      </div>
-    </div>
 
     <!-- =====================================================================
          SECTION 1: TOP STORIES (3-Column Layout from Reference Screenshot 1)
@@ -1638,6 +1577,308 @@ HTML_CONTENT = """<!DOCTYPE html>
               <button class="ctrl-btn" id="ctrlMute">🔊</button>
               <button class="ctrl-btn" id="ctrlFullscreen">⛶</button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       INTERACTIVE MODAL 1: OFFICIAL ET SIGN IN MODAL
+       ===================================================================== -->
+  <div class="site-modal-backdrop" id="etSignInModal" role="dialog" aria-modal="true" aria-labelledby="signInModalTitle">
+    <div class="site-modal-box signin-box">
+      <button class="modal-close-icon-btn" id="closeSignInModalBtn" aria-label="Close Sign In Modal">&times;</button>
+      <div class="signin-header">
+        <div class="signin-logo-badge">
+          <span class="et-sq">ET</span>
+          <span class="signin-brand-title">THE ECONOMIC TIMES</span>
+        </div>
+        <h3 id="signInModalTitle" class="signin-title">Sign in to your ET Account</h3>
+        <p class="signin-desc">Access your personalized portfolio, real-time market alerts, premium ETPrime stories, and saved bookmarks.</p>
+      </div>
+
+      <div class="signin-form-wrap">
+        <form id="signInForm" onsubmit="event.preventDefault(); window.handleSignInSubmit();">
+          <label for="signInInput" class="signin-label">Mobile Number or Email Address</label>
+          <div class="signin-input-group">
+            <input type="text" id="signInInput" placeholder="Enter 10-digit mobile or email…" required autocomplete="username">
+          </div>
+          <button type="submit" class="signin-submit-btn" id="signInSubmitBtn">Continue with OTP / Password →</button>
+        </form>
+
+        <div class="signin-divider">
+          <span>OR CONTINUE WITH</span>
+        </div>
+
+        <div class="signin-social-row">
+          <button class="social-btn google-btn" id="signInGoogleBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+            Google
+          </button>
+          <button class="social-btn apple-btn" id="signInAppleBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.65-1.06 1.72-.93 2.74 1.01.08 2.03-.5 2.64-1.24z"/></svg>
+            Apple
+          </button>
+        </div>
+
+        <div class="signin-perks">
+          <div class="perk-item">✓ Sync portfolio across mobile &amp; web</div>
+          <div class="perk-item">✓ Unlimited access to saved articles</div>
+          <div class="perk-item">✓ Real-time breaking news notifications</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       INTERACTIVE MODAL 2: MY WATCHLIST MODAL
+       ===================================================================== -->
+  <div class="site-modal-backdrop" id="etWatchlistModal" role="dialog" aria-modal="true" aria-labelledby="watchlistModalTitle">
+    <div class="site-modal-box watchlist-box">
+      <button class="modal-close-icon-btn" id="closeWatchlistModalBtn" aria-label="Close Watchlist Modal">&times;</button>
+      <div class="modal-inner-header">
+        <div class="m-tag"><span class="live-dot-et"></span> LIVE PORTFOLIO</div>
+        <h3 id="watchlistModalTitle" class="m-title">My Tracked Equities &amp; Funds</h3>
+        <p class="m-subtitle">Real-time valuation updates and price movement alerts.</p>
+      </div>
+
+      <div class="watchlist-add-bar">
+        <input type="text" id="watchlistSearchInput" placeholder="Add stock, ETF or mutual fund (e.g. INFY, HDFC)...">
+        <button id="addWatchlistBtn">+ Add Symbol</button>
+      </div>
+
+      <div class="watchlist-items-list" id="watchlistItemsContainer">
+        <div class="wl-row">
+          <div class="wl-info">
+            <strong class="wl-sym">SENSEX</strong>
+            <span class="wl-sub">BSE Benchmark Index</span>
+          </div>
+          <div class="wl-metric">
+            <span class="wl-price">72,792.48</span>
+            <span class="wl-change down">↓ -456.90 (-0.62%)</span>
+          </div>
+        </div>
+        <div class="wl-row">
+          <div class="wl-info">
+            <strong class="wl-sym">NIFTY 50</strong>
+            <span class="wl-sub">NSE Benchmark Index</span>
+          </div>
+          <div class="wl-metric">
+            <span class="wl-price">25,482.40</span>
+            <span class="wl-change up">▲ +114.60 (+0.45%)</span>
+          </div>
+        </div>
+        <div class="wl-row">
+          <div class="wl-info">
+            <strong class="wl-sym">UTI Aggressive Hybrid</strong>
+            <span class="wl-sub">Mutual Fund · 5Y Return</span>
+          </div>
+          <div class="wl-metric">
+            <span class="wl-price">₹348.62</span>
+            <span class="wl-change up">▲ +8.69%</span>
+          </div>
+        </div>
+        <div class="wl-row">
+          <div class="wl-info">
+            <strong class="wl-sym">RELIANCE</strong>
+            <span class="wl-sub">Reliance Industries Ltd</span>
+          </div>
+          <div class="wl-metric">
+            <span class="wl-price">₹2,842.10</span>
+            <span class="wl-change up">▲ +18.40 (+0.65%)</span>
+          </div>
+        </div>
+        <div class="wl-row">
+          <div class="wl-info">
+            <strong class="wl-sym">APPLE (AAPL)</strong>
+            <span class="wl-sub">NASDAQ Global Select</span>
+          </div>
+          <div class="wl-metric">
+            <span class="wl-price">$231.85</span>
+            <span class="wl-change up">▲ +3.12 (+1.36%)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       INTERACTIVE MODAL 3: LIVE MARKET DATA HUB
+       ===================================================================== -->
+  <div class="site-modal-backdrop" id="etMarketDataModal" role="dialog" aria-modal="true" aria-labelledby="marketDataModalTitle">
+    <div class="site-modal-box marketdata-box">
+      <button class="modal-close-icon-btn" id="closeMarketDataModalBtn" aria-label="Close Market Data Modal">&times;</button>
+      <div class="modal-inner-header">
+        <div class="m-tag"><span class="live-dot-et"></span> ET MARKETS LIVE</div>
+        <h3 id="marketDataModalTitle" class="m-title">Comprehensive Global Market Data</h3>
+        <p class="m-subtitle">Indices, commodities, bond yields, currencies and top movers.</p>
+      </div>
+
+      <div class="mdata-tabs" id="marketDataTabs">
+        <button class="mdata-tab active" data-tab="indices">Major Indices</button>
+        <button class="mdata-tab" data-tab="gainers">Top Gainers</button>
+        <button class="mdata-tab" data-tab="losers">Top Losers</button>
+        <button class="mdata-tab" data-tab="commodities">Commodities &amp; FX</button>
+      </div>
+
+      <div class="mdata-content" id="marketDataContent">
+        <table class="mdata-table">
+          <thead>
+            <tr>
+              <th>Instrument</th>
+              <th>LTP</th>
+              <th>Change</th>
+              <th>% Change</th>
+              <th>High</th>
+              <th>Low</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>SENSEX</strong></td>
+              <td>72,792.48</td>
+              <td class="diff-dn">-456.90</td>
+              <td class="diff-dn">-0.62%</td>
+              <td>73,310.20</td>
+              <td>72,680.15</td>
+            </tr>
+            <tr>
+              <td><strong>NIFTY 50</strong></td>
+              <td>25,482.40</td>
+              <td class="diff-up">+114.60</td>
+              <td class="diff-up">+0.45%</td>
+              <td>25,510.80</td>
+              <td>25,390.10</td>
+            </tr>
+            <tr>
+              <td><strong>S&amp;P 500</strong></td>
+              <td>5,864.67</td>
+              <td class="diff-up">+23.25</td>
+              <td class="diff-up">+0.40%</td>
+              <td>5,872.10</td>
+              <td>5,840.30</td>
+            </tr>
+            <tr>
+              <td><strong>NASDAQ 100</strong></td>
+              <td>20,385.12</td>
+              <td class="diff-up">+145.20</td>
+              <td class="diff-up">+0.72%</td>
+              <td>20,410.50</td>
+              <td>20,240.00</td>
+            </tr>
+            <tr>
+              <td><strong>FTSE 100</strong></td>
+              <td>8,243.80</td>
+              <td class="diff-dn">-18.30</td>
+              <td class="diff-dn">-0.22%</td>
+              <td>8,265.40</td>
+              <td>8,230.10</td>
+            </tr>
+            <tr>
+              <td><strong>BRENT CRUDE</strong></td>
+              <td>$74.28</td>
+              <td class="diff-dn">-0.62</td>
+              <td class="diff-dn">-0.83%</td>
+              <td>$75.40</td>
+              <td>$73.90</td>
+            </tr>
+            <tr>
+              <td><strong>GOLD (10g)</strong></td>
+              <td>₹78,450</td>
+              <td class="diff-up">+240.00</td>
+              <td class="diff-up">+0.31%</td>
+              <td>₹78,600</td>
+              <td>₹78,150</td>
+            </tr>
+            <tr>
+              <td><strong>USD / INR</strong></td>
+              <td>₹84.06</td>
+              <td class="diff-up">+0.02</td>
+              <td class="diff-up">+0.02%</td>
+              <td>₹84.10</td>
+              <td>₹84.02</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       INTERACTIVE MODAL 4: ET MASTERCLASS EXECUTIVE LEARNING
+       ===================================================================== -->
+  <div class="site-modal-backdrop" id="etMasterclassModal" role="dialog" aria-modal="true" aria-labelledby="masterclassModalTitle">
+    <div class="site-modal-box masterclass-box">
+      <button class="modal-close-icon-btn" id="closeMasterclassModalBtn" aria-label="Close Masterclass Modal">&times;</button>
+      <div class="masterclass-header-banner">
+        <div class="mc-tag">ET MASTERCLASS · EXECUTIVE EXCELLENCE</div>
+        <h3 id="masterclassModalTitle" class="mc-title">Upskill with Global Business Pioneers</h3>
+        <p class="mc-desc">Curated executive masterclasses with certificate from The Economic Times &amp; accredited global faculty.</p>
+        <div class="mc-festive-badge">🎉 Festive Offer: Flat 50% Off on All Cohorts</div>
+      </div>
+
+      <div class="mc-grid">
+        <div class="mc-card">
+          <div class="mc-card-top">
+            <span class="mc-badge">HOT &amp; TRENDING</span>
+            <span class="mc-dur">4 Weeks · Live Online</span>
+          </div>
+          <h4 class="mc-name">Enterprise AI &amp; Generative Intelligence for C-Suite</h4>
+          <p class="mc-fac"><strong>Faculty:</strong> Prof. Arvind Narayanan &amp; Silicon Valley AI Leaders</p>
+          <ul class="mc-points">
+            <li>Deploying autonomous multi-agent enterprise workflows</li>
+            <li>Cost economics of LLMs &amp; private sovereign models</li>
+            <li>Risk, IP governance, and board fiduciary compliance</li>
+          </ul>
+          <div class="mc-footer">
+            <div class="mc-price-col">
+              <span class="mc-cut-price">₹48,000</span>
+              <strong class="mc-now-price">₹24,000</strong>
+            </div>
+            <button class="mc-enroll-btn" data-course="AI Strategy">Enroll Cohort →</button>
+          </div>
+        </div>
+
+        <div class="mc-card">
+          <div class="mc-card-top">
+            <span class="mc-badge">EXECUTIVE COHORT</span>
+            <span class="mc-dur">6 Weeks · Masterclass</span>
+          </div>
+          <h4 class="mc-name">Global Value Investing &amp; Corporate Capital Allocation</h4>
+          <p class="mc-fac"><strong>Faculty:</strong> Prof. Aswath Damodaran (NYU Stern)</p>
+          <ul class="mc-points">
+            <li>Discounted cash flow, terminal multiple, and real options</li>
+            <li>Deconstructing distressed and high-growth balance sheets</li>
+            <li>Cross-border valuation across emerging and developed markets</li>
+          </ul>
+          <div class="mc-footer">
+            <div class="mc-price-col">
+              <span class="mc-cut-price">₹65,000</span>
+              <strong class="mc-now-price">₹32,500</strong>
+            </div>
+            <button class="mc-enroll-btn" data-course="Value Investing">Enroll Cohort →</button>
+          </div>
+        </div>
+
+        <div class="mc-card">
+          <div class="mc-card-top">
+            <span class="mc-badge">VENTURE &amp; M&amp;A</span>
+            <span class="mc-dur">3 Weeks · Intensive</span>
+          </div>
+          <h4 class="mc-name">Venture Capital Deal Structuring &amp; Term Sheet Mastery</h4>
+          <p class="mc-fac"><strong>Faculty:</strong> Former Sequoia &amp; Peak XV Partners</p>
+          <ul class="mc-points">
+            <li>Liquidation preferences, anti-dilution, and drag-along rights</li>
+            <li>Modeling waterfall exit simulations for seed to pre-IPO</li>
+            <li>Negotiation tact for founders and GP/LP syndicates</li>
+          </ul>
+          <div class="mc-footer">
+            <div class="mc-price-col">
+              <span class="mc-cut-price">₹42,000</span>
+              <strong class="mc-now-price">₹21,000</strong>
+            </div>
+            <button class="mc-enroll-btn" data-course="VC Deal Structuring">Enroll Cohort →</button>
           </div>
         </div>
       </div>
