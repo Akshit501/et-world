@@ -6502,3 +6502,586 @@ img {
 .mc-enroll-btn:hover {
   background: #78151a;
 }\n
+
+/* ==========================================================================
+   16 SECTIONS ARCHITECTURE DESIGN SYSTEM (ET WORLD V3)
+   ========================================================================== */
+
+/* Section Subtag */
+.sec-subtag {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mu);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-left: 14px;
+}
+
+/* Major Breaking News Bar (Section 1) */
+.breaking-news-ticker-bar {
+  background: #fff0f2;
+  border: 1px solid #ffd4dc;
+  border-left: 4px solid #ed193b;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+:root[data-theme="dark"] .breaking-news-ticker-bar {
+  background: #201217;
+  border-color: #441f27;
+  border-left-color: #ed193b;
+}
+
+.breaking-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ed193b;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.breaking-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: breakingPulse 1.4s infinite ease-in-out;
+}
+
+@keyframes breakingPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.7); }
+}
+
+.breaking-ticker-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  color: var(--tx);
+}
+
+.breaking-headline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.breaking-sep {
+  color: #ed193b;
+  font-weight: 800;
+}
+
+.breaking-live-timestamp {
+  font-size: 11px;
+  color: var(--mu);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* World Briefing & Live Intel Stream (Section 2) */
+.briefing-live-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+}
+
+.briefing-status-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--tx);
+}
+
+.briefing-refresh-btn {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 3px;
+  padding: 5px 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tx);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+:root[data-theme="dark"] .briefing-refresh-btn {
+  background: #192330;
+  border-color: #2e3e54;
+  color: #f3f4f6;
+}
+
+.briefing-refresh-btn:hover {
+  border-color: var(--ac);
+  color: var(--ac);
+}
+
+.briefing-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .briefing-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .briefing-timeline-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.briefing-card {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.briefing-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  border-color: #d1d5db;
+}
+
+:root[data-theme="dark"] .briefing-card:hover {
+  border-color: #3b4e68;
+}
+
+.briefing-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.briefing-time-badge {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  color: #ed193b;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.briefing-mini-dot {
+  font-size: 8px;
+}
+
+.briefing-topic-pill {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--ph);
+  padding: 2px 7px;
+  border-radius: 3px;
+  color: var(--tx-sec);
+}
+
+.briefing-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.34;
+  color: var(--tx);
+  margin-bottom: 8px;
+}
+
+.briefing-title a:hover {
+  color: var(--ac);
+}
+
+.briefing-excerpt {
+  font-size: 12.5px;
+  color: var(--tx-sec);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Portal Grid Layouts: 4 Columns and 3 Columns */
+.portal-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 1050px) {
+  .portal-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .portal-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portal-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .portal-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portal-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.portal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+:root[data-theme="dark"] .portal-card:hover {
+  border-color: #3b4e68;
+}
+
+.portal-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--ph);
+  margin-bottom: 12px;
+}
+
+.portal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portal-card:hover .portal-media img {
+  transform: scale(1.03);
+}
+
+.portal-card-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(12, 35, 60, 0.88);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 3px 7px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.portal-card-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.34;
+  color: var(--tx);
+  margin-bottom: 8px;
+}
+
+.portal-card-title a:hover {
+  color: var(--ac);
+}
+
+.portal-card-excerpt {
+  font-size: 12.5px;
+  color: var(--tx-sec);
+  line-height: 1.48;
+  margin: 0;
+  flex: 1;
+}
+
+/* Market Snapshot Ticker Strip (Section 4) */
+.market-snapshot-ticker {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 6px 0 16px;
+  scrollbar-width: none;
+}
+
+.market-snapshot-ticker::-webkit-scrollbar {
+  display: none;
+}
+
+.market-stat-pill {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 4px;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+.market-stat-pill .stat-name {
+  font-weight: 800;
+  color: var(--tx);
+  font-size: 11.5px;
+}
+
+.market-stat-pill .stat-val {
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.market-stat-pill .stat-chg.up {
+  color: var(--green-up);
+  font-weight: 700;
+}
+
+.market-stat-pill .stat-chg.down {
+  color: var(--red-down);
+  font-weight: 700;
+}
+
+/* Expert Views & Analysis Cards (Section 14) */
+.author-analysis-card {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 6px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.author-analysis-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+:root[data-theme="dark"] .author-analysis-card:hover {
+  border-color: #3b4e68;
+}
+
+.author-quote-mark {
+  font-family: Georgia, serif;
+  font-size: 44px;
+  line-height: 0.8;
+  color: #ed193b;
+  margin-bottom: 10px;
+}
+
+.author-card-headline {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.34;
+  color: var(--tx);
+  margin-bottom: 10px;
+}
+
+.author-card-headline a:hover {
+  color: var(--ac);
+}
+
+.author-card-excerpt {
+  font-size: 13px;
+  color: var(--tx-sec);
+  line-height: 1.5;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.author-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ln-subtle);
+}
+
+.author-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-details-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-person-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--tx);
+}
+
+.author-person-title {
+  font-size: 11px;
+  color: var(--mu);
+}
+
+/* World Sports Dual Row (Section 15) */
+.sports-dual-row {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .sports-dual-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sports-left-stories {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sports-story-hero {
+  display: flex;
+  flex-direction: column;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 14px;
+}
+
+.sports-hero-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16/9;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--ph);
+  margin-bottom: 12px;
+}
+
+.sports-pill {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #ed193b;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.sports-hero-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.34;
+  color: var(--tx);
+  margin: 0;
+}
+
+.sports-hero-title a:hover {
+  color: var(--ac);
+}
+
+.sports-side-stacked {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 700px) {
+  .sports-side-stacked {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sports-mini-item {
+  display: flex;
+  flex-direction: column;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.sports-mini-thumb {
+  aspect-ratio: 16/10;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--ph);
+  margin-bottom: 8px;
+}
+
+.sports-mini-title {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--tx);
+  margin: 0;
+}
+
+.sports-mini-title a:hover {
+  color: var(--ac);
+}
+
+.sports-scorecard-widget {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 6px;
+  padding: 16px;
+}
