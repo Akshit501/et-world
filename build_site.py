@@ -1421,100 +1421,161 @@ HTML_CONTENT = """<!DOCTYPE html>
     </section>
 
     <!-- =====================================================================
-         SECTION 14: WORLD SPORTS
-         Major international sporting events, competitions and results + live scorecard
+         SECTION 14: WORLD SPORTS (Exact Reference Screenshot)
+         Dark charcoal theme (#1a1a1a), 'Sports ›' with All/Cricket/Football/Tennis tabs,
+         Hero story, two columns of 3 stacked stories, and the interactive Playcard
          ===================================================================== -->
-    <section class="portal-section" id="world-sports">
-      <div class="sec-heading">
-        <h2><a href="#world-sports">World Sports <span class="sec-chevron">›</span></a></h2>
-        <span class="sec-subtag">MAJOR INTERNATIONAL SPORTING EVENTS, COMPETITIONS &amp; RESULTS</span>
-      </div>
-
-      <div class="sports-dual-row">
+    <section class="portal-section sports-dark-hub" id="world-sports">
+      <div class="sports-dark-container">
         
-        <!-- Left: 4 International Sports Stories -->
-        <div class="sports-left-stories">
+        <!-- Header row: Sports › on left, Category tabs on right -->
+        <div class="sports-header-row">
+          <h2 class="sports-heading">
+            <a href="#world-sports">Sports <span class="sec-chevron">›</span></a>
+          </h2>
+          <div class="sports-cat-tabs" id="sportsCatTabs">
+            <button class="sports-tab active" data-cat="all">All</button>
+            <button class="sports-tab" data-cat="cricket">Cricket</button>
+            <button class="sports-tab" data-cat="football">Football</button>
+            <button class="sports-tab" data-cat="tennis">Tennis</button>
+          </div>
+        </div>
+
+        <!-- 4-Column Layout matching uploaded reference screenshot -->
+        <div class="sports-quad-grid">
           
-          <article class="sports-story-hero">
-            <a href="#ws-1" class="sports-hero-media">
-              <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&auto=format&fit=crop&q=80" alt="Champions League Football" loading="lazy">
-              <span class="sports-pill">UEFA CHAMPIONS LEAGUE</span>
+          <!-- Column 1: Big Hero Story -->
+          <article class="sports-hero-col">
+            <a href="#sp-hero" class="sports-hero-img-wrap">
+              <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=700&auto=format&fit=crop&q=80" alt="Harbhajan On Aussie Coach" class="sports-hero-img" loading="lazy">
             </a>
-            <h3 class="sports-hero-title">
-              <a href="#ws-1">Champions League Knockout Stage: Elite European Contenders Gear Up For Tactical Showdowns</a>
+            <h3 class="sports-hero-headline">
+              <a href="#sp-hero">&ldquo;Greg Chappell Divided Players&rdquo;: Harbhajan On Aussie Coach</a>
             </h3>
           </article>
 
-          <div class="sports-side-stacked">
-            
-            <article class="sports-mini-item">
-              <a href="#ws-2" class="sports-mini-thumb">
-                <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=160&auto=format&fit=crop&q=80" alt="Formula 1 Grand Prix" loading="lazy">
+          <!-- Column 2: 3 Stacked Stories -->
+          <div class="sports-stack-col">
+            <article class="sports-stack-item">
+              <a href="#sp-1" class="sports-stack-thumb">
+                <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=250&auto=format&fit=crop&q=80" alt="Anahat Singh" loading="lazy">
               </a>
-              <h4 class="sports-mini-title">
-                <a href="#ws-2">Formula 1 Championship Climax: Norris and Verstappen Head to Season Finale Decider</a>
+              <h4 class="sports-stack-title">
+                <a href="#sp-1">Anahat Claims Biggest Win Of Her Career, Downs Legend El Sherbini</a>
               </h4>
             </article>
 
-            <article class="sports-mini-item">
-              <a href="#ws-3" class="sports-mini-thumb">
-                <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=160&auto=format&fit=crop&q=80" alt="Grand Slam Tennis" loading="lazy">
+            <article class="sports-stack-item">
+              <a href="#sp-2" class="sports-stack-thumb">
+                <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=250&auto=format&fit=crop&q=80" alt="Para Asiad Swimmer" loading="lazy">
               </a>
-              <h4 class="sports-mini-title">
-                <a href="#ws-3">Grand Slam Tennis: Next-Gen Rivalries Redefine Men's &amp; Women's Hard Court Supremacy</a>
+              <h4 class="sports-stack-title">
+                <a href="#sp-2">Para Asiad: Indian Para Swimmer Deported Over Sexual Misconduct</a>
               </h4>
             </article>
 
-            <article class="sports-mini-item">
-              <a href="#ws-4" class="sports-mini-thumb">
-                <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&auto=format&fit=crop&q=80" alt="Cricket Border-Gavaskar" loading="lazy">
+            <article class="sports-stack-item">
+              <a href="#sp-3" class="sports-stack-thumb">
+                <img src="https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=250&auto=format&fit=crop&q=80" alt="Kohli Rohit World Cup 2027" loading="lazy">
               </a>
-              <h4 class="sports-mini-title">
-                <a href="#ws-4">Border-Gavaskar Trophy: Rahul &amp; Pant Consolidate Lead In Thrilling Fourth Day Test</a>
+              <h4 class="sports-stack-title">
+                <a href="#sp-3">Kohli, Rohit To Play 2027 World Cup? BCCI Boss Lists Key Factors</a>
               </h4>
             </article>
-
           </div>
+
+          <!-- Column 3: 3 Stacked Stories -->
+          <div class="sports-stack-col">
+            <article class="sports-stack-item">
+              <a href="#sp-4" class="sports-stack-thumb">
+                <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=250&auto=format&fit=crop&q=80" alt="Shreyas vs Surya" loading="lazy">
+              </a>
+              <h4 class="sports-stack-title">
+                <a href="#sp-4">Shreyas vs Surya: Ex India Star Says Comparison &ldquo;Out Of The Way&rdquo;</a>
+              </h4>
+            </article>
+
+            <article class="sports-stack-item">
+              <a href="#sp-5" class="sports-stack-thumb">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&auto=format&fit=crop&q=80" alt="Kevin Pietersen" loading="lazy">
+              </a>
+              <h4 class="sports-stack-title">
+                <a href="#sp-5">Pietersen&rsquo;s Bold Fix Amid Empty Stands In South Africa</a>
+              </h4>
+            </article>
+
+            <article class="sports-stack-item">
+              <a href="#sp-6" class="sports-stack-thumb">
+                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=250&auto=format&fit=crop&q=80" alt="Shreyas Iyer" loading="lazy">
+              </a>
+              <h4 class="sports-stack-title">
+                <a href="#sp-6">Shreyas Iyer&rsquo;s &ldquo;Sweet Headache&rdquo; Message Amid Sooryavanshi Debate</a>
+              </h4>
+            </article>
+          </div>
+
+          <!-- Column 4: The Playcard / Scorecard Widget (Exact Screenshot Format) -->
+          <aside class="playcard-widget" id="sportsPlaycard">
+            
+            <!-- Segmented Control Bar: In Progress | Upcoming | Recent -->
+            <div class="playcard-tabs">
+              <button class="pc-tab active" data-tab="inprogress">In Progress</button>
+              <button class="pc-tab" data-tab="upcoming">Upcoming</button>
+              <button class="pc-tab" data-tab="recent">Recent</button>
+            </div>
+
+            <!-- Dynamic Card Content Body -->
+            <div class="playcard-body" id="playcardContent">
+              
+              <!-- Match Header with Live Badge & Bell Icon -->
+              <div class="playcard-top-row">
+                <div class="playcard-badge-info">
+                  <span class="pc-live-dot">● LIVE</span>
+                  <span class="pc-match-title" title="Match 7, ICC Men's T20 World Cup Africa Qualifier">Match 7, ICC Men's T20 World Cup Afri...</span>
+                </div>
+                <button class="pc-bell-btn" title="Toggle Match Notifications" onclick="showToast('🔔 Match notifications enabled for ICC T20 Qualifier');">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                </button>
+              </div>
+
+              <!-- Status line in red -->
+              <div class="pc-status-line">Play In Progress</div>
+
+              <!-- Score lines -->
+              <div class="pc-scores-block">
+                <div class="pc-team-line">
+                  <div class="pc-team-name-col">
+                    <span class="pc-team-badge ngr-badge">🇳🇬</span>
+                    <strong class="pc-team-code">NGR</strong>
+                  </div>
+                  <div class="pc-team-score-col">
+                    <strong class="score-runs">60/1</strong>
+                    <span class="score-overs">(5.1)</span>
+                  </div>
+                </div>
+
+                <div class="pc-team-line muted">
+                  <div class="pc-team-name-col">
+                    <span class="pc-team-badge moz-badge">🇲🇿</span>
+                    <strong class="pc-team-code">MOZ</strong>
+                  </div>
+                  <div class="pc-team-score-col">
+                    <span class="score-runs">93</span>
+                    <span class="score-overs">(19.4)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Equation and Run Rates -->
+              <div class="pc-footer-row">
+                <span class="pc-equation-text">Nigeria need 34 runs in 89 balls at 2.29 rpo</span>
+                <span class="pc-crr-badge">CRR: 11.76</span>
+              </div>
+
+            </div>
+          </aside>
 
         </div>
-
-        <!-- Right: Interactive Live Match Scorecard Widget -->
-        <aside class="sports-scorecard-widget">
-          <div class="tabs" id="sportsTabs">
-            <span class="tab-item on" data-sport="all">All</span>
-            <span class="tab-item" data-sport="cricket">Cricket</span>
-            <span class="tab-item" data-sport="football">Football</span>
-            <span class="tab-item" data-sport="f1">F1</span>
-            <span class="tab-item" data-sport="tennis">Tennis</span>
-            <span class="tab-item more-sports">More ▾</span>
-          </div>
-
-          <div class="live" id="liveMatchContainer">
-            <div class="tm status-row">
-              <span class="d"><span class="live-pulse"></span> LIVE</span>
-              <span class="match-stage" id="matchStage">Border-Gavaskar Trophy · Day 4</span>
-            </div>
-            
-            <div class="tm team-row">
-              <span class="team-name">🇮🇳 IND</span>
-              <span class="sc" id="scoreTeam1">286/4 (82.1)</span>
-            </div>
-            
-            <div class="tm team-row">
-              <span class="team-name">🇦🇺 AUS</span>
-              <span class="sc" id="scoreTeam2">312</span>
-            </div>
-            
-            <div class="match-summary-note" id="matchSummaryNote">
-              India trail by 26 runs · K.L. Rahul 88* (142), Pant 42* (39)
-            </div>
-
-            <div class="match-action-row">
-              <button class="score-refresh-btn" id="scoreRefreshBtn">⚡ Refresh Commentary</button>
-              <a href="#full-scorecard" class="full-card-link">Full Scorecard →</a>
-            </div>
-          </div>
-        </aside>
 
       </div>
     </section>

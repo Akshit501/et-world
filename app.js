@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDateClock();
   initSummitTabs();
   initSportsTabs();
+  initSportsPlaycard();
   initVideoPlayerModal();
   initPodcastPlayer();
   initShortsPlayer();
@@ -1054,6 +1055,177 @@ function initFeaturedSeriesPodcast() {
 
       if (typeof showToast === 'function') {
         showToast(`▶ Playing: "${title.slice(0, 45)}..." (${dur})`);
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   SPORTS PLAYCARD CONTROLLER (Exact Reference Screenshot)
+   Handles 'In Progress', 'Upcoming', and 'Recent' tab switching in playcard,
+   plus category filtering tabs (All, Cricket, Football, Tennis).
+   ========================================================================== */
+function initSportsPlaycard() {
+  const pcTabs = document.querySelectorAll('.playcard-tabs .pc-tab');
+  const pcBody = document.getElementById('playcardContent');
+
+  const playcardDatasets = {
+    inprogress: `
+      <div class="playcard-top-row">
+        <div class="playcard-badge-info">
+          <span class="pc-live-dot">● LIVE</span>
+          <span class="pc-match-title" title="Match 7, ICC Men's T20 World Cup Africa Qualifier">Match 7, ICC Men's T20 World Cup Afri...</span>
+        </div>
+        <button class="pc-bell-btn" title="Toggle Match Notifications" onclick="showToast('🔔 Match notifications enabled for ICC T20 Qualifier');">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </button>
+      </div>
+
+      <div class="pc-status-line">Play In Progress</div>
+
+      <div class="pc-scores-block">
+        <div class="pc-team-line">
+          <div class="pc-team-name-col">
+            <span class="pc-team-badge ngr-badge">🇳🇬</span>
+            <strong class="pc-team-code">NGR</strong>
+          </div>
+          <div class="pc-team-score-col">
+            <strong class="score-runs">60/1</strong>
+            <span class="score-overs">(5.1)</span>
+          </div>
+        </div>
+
+        <div class="pc-team-line muted">
+          <div class="pc-team-name-col">
+            <span class="pc-team-badge moz-badge">🇲🇿</span>
+            <strong class="pc-team-code">MOZ</strong>
+          </div>
+          <div class="pc-team-score-col">
+            <span class="score-runs">93</span>
+            <span class="score-overs">(19.4)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-footer-row">
+        <span class="pc-equation-text">Nigeria need 34 runs in 89 balls at 2.29 rpo</span>
+        <span class="pc-crr-badge">CRR: 11.76</span>
+      </div>
+    `,
+
+    upcoming: `
+      <div class="playcard-top-row">
+        <div class="playcard-badge-info">
+          <span class="pc-live-dot" style="background:#2563eb;">UPCOMING</span>
+          <span class="pc-match-title" title="Border-Gavaskar Trophy · 5th Test (Sydney)">Border-Gavaskar Trophy · 5th Test</span>
+        </div>
+        <button class="pc-bell-btn" title="Set Match Reminder" onclick="showToast('⏰ Reminder set for 5th Test: IND vs AUS');">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </button>
+      </div>
+
+      <div class="pc-status-line" style="color:#60a5fa;">Starts Tomorrow · 05:00 AM IST</div>
+
+      <div class="pc-scores-block">
+        <div class="pc-team-line">
+          <div class="pc-team-name-col">
+            <span class="pc-team-badge">🇮🇳</span>
+            <strong class="pc-team-code">IND</strong>
+          </div>
+          <div class="pc-team-score-col">
+            <span style="color:#9ca3af; font-size:11.5px;">Series Tied 1-1</span>
+          </div>
+        </div>
+
+        <div class="pc-team-line">
+          <div class="pc-team-name-col">
+            <span class="pc-team-badge">🇦🇺</span>
+            <strong class="pc-team-code">AUS</strong>
+          </div>
+          <div class="pc-team-score-col">
+            <span style="color:#9ca3af; font-size:11.5px;">SCG, Sydney</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-footer-row">
+        <span class="pc-equation-text" style="color:#93c5fd;">Toss at 04:30 AM · Dry turning pitch expected</span>
+        <span class="pc-crr-badge">5-Day Test</span>
+      </div>
+    `,
+
+    recent: `
+      <div class="playcard-top-row">
+        <div class="playcard-badge-info">
+          <span class="pc-live-dot" style="background:#059669;">RESULT</span>
+          <span class="pc-match-title" title="Match 6, ICC Men's T20 Qualifier">Match 6, ICC Men's T20 Qualifier</span>
+        </div>
+        <button class="pc-bell-btn" title="View Full Scorecard" onclick="showToast('📊 Kenya won by 46 runs. Full scorecard opened.');">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="pc-status-line" style="color:#34d399;">Match Ended · Kenya Won</div>
+
+      <div class="pc-scores-block">
+        <div class="pc-team-line">
+          <div class="pc-team-name-col">
+            <span class="pc-team-badge">🇰🇪</span>
+            <strong class="pc-team-code">KEN</strong>
+          </div>
+          <div class="pc-team-score-col">
+            <strong class="score-runs">168/4</strong>
+            <span class="score-overs">(20.0)</span>
+          </div>
+        </div>
+
+        <div class="pc-team-line muted">
+          <div class="pc-team-name-col">
+            <span class="pc-team-badge">🇹🇿</span>
+            <strong class="pc-team-code">TAN</strong>
+          </div>
+          <div class="pc-team-score-col">
+            <span class="score-runs">122</span>
+            <span class="score-overs">(18.2)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-footer-row">
+        <span class="pc-equation-text" style="color:#6ee7b7;">Kenya won by 46 runs · PoTM: Rakep Patel (64*)</span>
+        <span class="pc-crr-badge">Final</span>
+      </div>
+    `
+  };
+
+  pcTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      pcTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const category = tab.dataset.tab;
+      if (pcBody && playcardDatasets[category]) {
+        pcBody.style.opacity = '0';
+        setTimeout(() => {
+          pcBody.innerHTML = playcardDatasets[category];
+          pcBody.style.opacity = '1';
+        }, 150);
+      }
+      if (typeof showToast === 'function') {
+        const labels = { inprogress: 'Live Matches (In Progress)', upcoming: 'Upcoming Fixtures', recent: 'Recent Results' };
+        showToast(`🏏 Playcard: Showing ${labels[category] || category}`);
+      }
+    });
+  });
+
+  // Sports category tabs (All, Cricket, Football, Tennis)
+  const sportsCatTabs = document.querySelectorAll('#sportsCatTabs .sports-tab');
+  sportsCatTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      sportsCatTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.dataset.cat || 'all';
+      if (typeof showToast === 'function') {
+        showToast(`🏆 Sports: Showing ${cat.toUpperCase()} stories`);
       }
     });
   });
