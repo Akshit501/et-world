@@ -1066,36 +1066,28 @@ img {
 /* ==========================================================================
    LEFT & RIGHT GUTTER SKYSCRAPER ADS (Fills Left & Right Empty Spaces)
    ========================================================================== */
-.et-gutter-ad {
+/* Gutter Skyscraper Ads - Strictly in outer border/gutter, ZERO overlap with news section */
+.et-gutter-ad,
+.pwc-gutter-ad {
   position: fixed;
-  top: 155px;
-  width: 140px;
+  top: 140px;
+  width: 150px;
   z-index: 85;
-  display: none;
+  display: none !important;
 }
 
-@media (min-width: 1600px) {
-  .et-gutter-ad {
-    display: block;
+@media (min-width: 1640px) {
+  .et-gutter-ad,
+  .pwc-gutter-ad {
+    display: block !important;
   }
   .left-gutter-ad {
-    left: calc(50% - (var(--container-max) / 2) - 152px);
+    right: calc(50% + (var(--container-max) / 2) + 16px) !important;
+    left: auto !important;
   }
   .right-gutter-ad {
-    right: calc(50% - (var(--container-max) / 2) - 152px);
-  }
-}
-
-@media (min-width: 1360px) and (max-width: 1599px) {
-  .et-gutter-ad {
-    display: block;
-    width: 120px;
-  }
-  .left-gutter-ad {
-    left: 8px;
-  }
-  .right-gutter-ad {
-    right: 8px;
+    left: calc(50% + (var(--container-max) / 2) + 16px) !important;
+    right: auto !important;
   }
 }
 
@@ -4114,39 +4106,7 @@ img {
 /* ==========================================================================
    PwC ASPIRING WOMEN LEADERS SCHOLARSHIP TAKEOVER ADS (Reference Screenshots)
    ========================================================================== */
-.pwc-gutter-ad {
-  position: fixed;
-  top: 130px;
-  width: 160px;
-  z-index: 85;
-  display: none;
-}
-
-@media (min-width: 1620px) {
-  .pwc-gutter-ad {
-    display: block;
-  }
-  .left-gutter-ad {
-    left: calc(50% - (var(--container-max) / 2) - 172px);
-  }
-  .right-gutter-ad {
-    right: calc(50% - (var(--container-max) / 2) - 172px);
-  }
-}
-
-@media (min-width: 1360px) and (max-width: 1619px) {
-  .pwc-gutter-ad {
-    display: block;
-    width: 135px;
-  }
-  .left-gutter-ad {
-    left: 8px;
-  }
-  .right-gutter-ad {
-    right: 8px;
-  }
-}
-
+/* PwC Gutter ad inherits unified rules */
 .pwc-sticky-card {
   background: linear-gradient(180deg, #fff2ee 0%, #ffffff 85%);
   border: 1px solid #ffd8cc;
