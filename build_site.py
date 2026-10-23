@@ -215,7 +215,6 @@ HTML_CONTENT = """<!DOCTYPE html>
         <a href="#top-world-stories" class="cat-item" title="Top Stories">Top Stories</a>
         <a href="#world-briefing" class="cat-item" title="World Briefing">Briefing</a>
         <a href="#geopolitics-relations" class="cat-item" title="Geopolitics">Geopolitics</a>
-        <a href="#global-economy-markets" class="cat-item" title="Indices &amp; Markets">Markets</a>
         <a href="#crypto-news" class="cat-item" title="Cryptocurrency News">Crypto</a>
         <a href="#market-data" class="cat-item cat-market-data-btn" id="catMarketDataBtn" title="Market Data"><span class="cat-chart-icon">📊</span>Market Data</a>
         <a href="#masterclass" class="cat-item cat-masterclass-tab" id="catMasterclassBtn" title="ET Masterclass Executive Learning">Masterclass</a>
@@ -284,18 +283,17 @@ HTML_CONTENT = """<!DOCTYPE html>
         <a href="#top-world-stories" class="active">1. Top World Stories</a>
         <a href="#world-briefing">2. World Briefing / Latest Updates</a>
         <a href="#geopolitics-relations">3. Geopolitics &amp; International Relations</a>
-        <a href="#global-economy-markets">4. Indices &amp; Markets Dashboard</a>
-        <a href="#crypto-news">5. Cryptocurrency News Hub</a>
-        <a href="#international-business">6. International Business</a>
-        <a href="#us-uk-news">7. US &amp; UK News</a>
-        <a href="#global-tech-ai">8. Global Tech &amp; AI</a>
-        <a href="#science-space">9. Science &amp; Space</a>
-        <a href="#environment-climate">10. Environment &amp; Climate</a>
-        <a href="#global-real-estate">11. Global Real Estate</a>
-        <a href="#people-leadership-panache">12. Panache &amp; Leadership</a>
-        <a href="#global-health">13. Global Health</a>
-        <a href="#world-sports">14. World Sports</a>
-        <a href="#podcasts-section">15. Featured Series: Podcasts</a>
+        <a href="#crypto-news">4. Cryptocurrency News Hub</a>
+        <a href="#international-business">5. International Business</a>
+        <a href="#us-uk-news">6. US &amp; UK News</a>
+        <a href="#global-tech-ai">7. Global Tech &amp; AI</a>
+        <a href="#science-space">8. Science &amp; Space</a>
+        <a href="#environment-climate">9. Environment &amp; Climate</a>
+        <a href="#global-real-estate">10. Global Real Estate</a>
+        <a href="#people-leadership-panache">11. Panache &amp; Leadership</a>
+        <a href="#global-health">12. Global Health</a>
+        <a href="#world-sports">13. World Sports</a>
+        <a href="#podcasts-section">14. Featured Series: Podcasts</a>
       </div>
     </div>
   </aside>
@@ -580,266 +578,7 @@ HTML_CONTENT = """<!DOCTYPE html>
       </div>
     </section>
 
-    <!-- =====================================================================
-         SECTION 4: INDICES & MARKETS DASHBOARD
-         EXACT FORMAT FROM REFERENCE IMAGE 1:
-         Indices with 1D-5Y tabs, Interactive Area Chart, Advance/Decline ratio,
-         FII/DII cash flow, and Markets Dashboard with Top Gainers / Losers tabs
-         ===================================================================== -->
-    <section class="portal-section et-indices-hub-section" id="global-economy-markets">
-      <div class="peach-container-wrap">
-        
-        <!-- Header Row -->
-        <div class="indices-hub-header">
-          <div class="indices-hub-title-group">
-            <h2 class="indices-title"><a href="#markets">Indices <span class="sec-chevron">→</span></a></h2>
-            <div class="indices-live-indicator">
-              <span class="live-pulse-red"></span>
-              <span class="live-text-bold">Live</span>
-              <span class="live-sep">|</span>
-              <span class="live-as-on" id="indicesAsOnTime">As on 23 Oct, 2026 11:33 IST</span>
-            </div>
-          </div>
-
-          <!-- Time Horizon Tabs -->
-          <div class="indices-time-tabs" id="indicesTimeTabs">
-            <button class="time-tab active" data-period="1D">1D</button>
-            <button class="time-tab" data-period="1W">1W</button>
-            <button class="time-tab" data-period="1M">1M</button>
-            <button class="time-tab" data-period="3M">3M</button>
-            <button class="time-tab" data-period="6M">6M</button>
-            <button class="time-tab" data-period="1Y">1Y</button>
-            <button class="time-tab" data-period="3Y">3Y</button>
-            <button class="time-tab" data-period="5Y">5Y</button>
-          </div>
-        </div>
-
-        <!-- Indices Card & Area Chart Box -->
-        <div class="indices-main-box">
-          
-          <!-- Top Row: 6 Index Cards matching Image 1 -->
-          <div class="indices-cards-row" id="indicesCardsRow">
-            <div class="idx-card active" data-index="nifty50" data-val="22,472.75" data-chg="-214.91 (-0.95%)" data-dir="down">
-              <div class="idx-name">Nifty 50</div>
-              <div class="idx-val">22,472.75</div>
-              <div class="idx-diff down">↓ -214.91 (-0.95%)</div>
-            </div>
-            <div class="idx-card" data-index="sensex" data-val="72,764.54" data-chg="-484.85 (-0.66%)" data-dir="down">
-              <div class="idx-name">BSE Sensex</div>
-              <div class="idx-val">72,764.54</div>
-              <div class="idx-diff down">↓ -484.85 (-0.66%)</div>
-            </div>
-            <div class="idx-card" data-index="nifty500" data-val="21,328" data-chg="-368.55 (-1.70%)" data-dir="down">
-              <div class="idx-name">Nifty 500</div>
-              <div class="idx-val">21,328</div>
-              <div class="idx-diff down">↓ -368.55 (-1.70%)</div>
-            </div>
-            <div class="idx-card" data-index="niftybank" data-val="54,232.45" data-chg="-693.25 (-1.26%)" data-dir="down">
-              <div class="idx-name">Nifty Bank</div>
-              <div class="idx-val">54,232.45</div>
-              <div class="idx-diff down">↓ -693.25 (-1.26%)</div>
-            </div>
-            <div class="idx-card" data-index="niftyit" data-val="32,321.95" data-chg="+240.71 (0.75%)" data-dir="up">
-              <div class="idx-name">Nifty IT</div>
-              <div class="idx-val">32,321.95</div>
-              <div class="idx-diff up">↑ 240.71 (0.75%)</div>
-            </div>
-            <div class="idx-card" data-index="nifty200" data-val="12,829.5" data-chg="-196.00 (-1.50%)" data-dir="down">
-              <div class="idx-name">Nifty 200</div>
-              <div class="idx-val">12,829.5</div>
-              <div class="idx-diff down">↓ -196.00 (-1.50%)</div>
-            </div>
-          </div>
-
-          <!-- Area Chart Area with Y-axis & Tooltip -->
-          <div class="indices-chart-area">
-            <div class="chart-y-axis">
-              <span id="chartYMax">22,800</span>
-              <span id="chartYMid">22,600</span>
-              <span id="chartYMin">22,400</span>
-            </div>
-
-            <div class="chart-canvas-wrap">
-              <div class="chart-dashed-prev-close"></div>
-
-              <!-- Interactive Floating Tooltip (matching image 1) -->
-              <div class="chart-floating-tooltip" id="chartTooltip">
-                <span class="tt-date">Oct 23, 09:47 AM</span>
-                <span class="tt-val" id="chartTooltipVal">22,684.81 <strong class="tt-pct down">(-0.01% basis prev close)</strong></span>
-              </div>
-
-              <!-- SVG Area Chart -->
-              <svg class="indices-svg-chart" viewBox="0 0 800 180" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="chartGradientRed" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#ed193b" stop-opacity="0.25"/>
-                    <stop offset="100%" stop-color="#ed193b" stop-opacity="0.01"/>
-                  </linearGradient>
-                  <linearGradient id="chartGradientGreen" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#0b8f16" stop-opacity="0.25"/>
-                    <stop offset="100%" stop-color="#0b8f16" stop-opacity="0.01"/>
-                  </linearGradient>
-                </defs>
-                <path class="chart-area-fill" id="chartAreaFill" d="M 0,35 Q 80,30 160,55 T 320,70 T 480,115 T 640,140 T 800,145 L 800,180 L 0,180 Z" fill="url(#chartGradientRed)"/>
-                <path class="chart-line-stroke" id="chartLineStroke" d="M 0,35 Q 80,30 160,55 T 320,70 T 480,115 T 640,140 T 800,145" fill="none" stroke="#ed193b" stroke-width="2.2" stroke-linecap="round"/>
-              </svg>
-
-              <!-- X-Axis Timestamps -->
-              <div class="chart-x-axis">
-                <span>09:15</span>
-                <span>10:23</span>
-                <span>11:31</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="chart-footer-row">
-            <a href="#markets" class="view-nifty-link" id="viewSelectedNiftyLink">View Nifty 50 <span class="chevron-sm">›</span></a>
-          </div>
-
-        </div>
-
-        <!-- 3 Metric Cards Underneath (Advance/Decline, FII Cash, DII Cash) -->
-        <div class="indices-three-metrics-grid">
-          
-          <div class="metric-card advance-decline-card">
-            <div class="m-card-head">
-              <span>Advance/Decline (NSE)</span>
-              <span class="m-card-chevron">›</span>
-            </div>
-            <div class="m-adv-numbers">
-              <span class="adv-num">4</span>
-              <span class="dec-num">46</span>
-            </div>
-            <div class="adv-dec-bar">
-              <div class="adv-fill" style="width: 8%;"></div>
-              <div class="dec-fill" style="width: 92%;"></div>
-            </div>
-            <div class="m-card-date">Oct 23, 2026</div>
-          </div>
-
-          <div class="metric-card fii-cash-card">
-            <div class="m-card-head">
-              <span>FII Cash (Cr.)</span>
-              <span class="m-card-chevron">›</span>
-            </div>
-            <div class="m-cash-val down">₹ -3458.7</div>
-            <div class="m-card-date">Oct 22, 2026</div>
-          </div>
-
-          <div class="metric-card dii-cash-card">
-            <div class="m-card-head">
-              <span>DII Cash (Cr.)</span>
-              <span class="m-card-chevron">›</span>
-            </div>
-            <div class="m-cash-val up">₹ 2891.32</div>
-            <div class="m-card-date">Oct 22, 2026</div>
-          </div>
-
-        </div>
-
-        <!-- Markets Dashboard Section (Lower Part of Image 1) -->
-        <div class="markets-dashboard-section">
-          
-          <div class="m-dash-header">
-            <h3 class="m-dash-title"><a href="#markets">Markets Dashboard <span class="sec-chevron">→</span></a></h3>
-            <div class="m-dash-dropdowns">
-              <button class="pill-dropdown-btn" id="dashIndexFilterBtn" onclick="showToast('Filtered by Nifty 500 Index');">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-                <span>Nifty 500</span>
-                <span class="caret-sm">▾</span>
-              </button>
-              <button class="pill-dropdown-btn" id="dashPeriodFilterBtn" onclick="showToast('Period set to 1 Day');">
-                <span>1 Day</span>
-                <span class="caret-sm">▾</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="m-dash-main-box">
-            
-            <!-- Left Vertical Tabs -->
-            <div class="m-dash-left-tabs" id="dashLeftTabs">
-              <button class="dash-vtab active" data-tab="gainers">
-                <span>Top Gainers</span>
-                <span class="dash-chevron">›</span>
-              </button>
-              <button class="dash-vtab" data-tab="losers">
-                <span>Top Losers</span>
-              </button>
-              <button class="dash-vtab" data-tab="volume">
-                <span>Active by Volume</span>
-              </button>
-            </div>
-
-            <!-- Right Stock Items List -->
-            <div class="m-dash-stock-list" id="dashStockListContainer">
-              
-              <div class="dash-stock-row">
-                <div class="stk-info-col">
-                  <div class="stk-name-row">
-                    <strong class="stk-symbol">Cyient</strong>
-                    <span class="stk-vol">(Vol: 1,20,65,313k)</span>
-                  </div>
-                  <div class="stk-sub-meta">
-                    <span class="stk-score-badge"><span class="score-icon">▶</span> Stock Score: 6</span>
-                    <span class="stk-sep">|</span>
-                    <span class="stk-upside down">Potential Upside*: ↓ -3.50 %</span>
-                  </div>
-                </div>
-                <div class="stk-metric-col">
-                  <span class="stk-ltp">1,229</span>
-                  <span class="stk-diff up">↑ 84.90 (7.43 %)</span>
-                </div>
-                <button class="stk-add-btn" title="Add Cyient to Watchlist" onclick="window.addToWatchlist('Cyient', '1,229', '+7.43%');">+</button>
-              </div>
-
-              <div class="dash-stock-row">
-                <div class="stk-info-col">
-                  <div class="stk-name-row">
-                    <strong class="stk-symbol">International Gemmol</strong>
-                    <span class="stk-vol">(Vol: 91,18,274k)</span>
-                  </div>
-                  <div class="stk-sub-meta">
-                    <span class="stk-score-badge"><span class="score-icon">▶</span> Stock Score: 8</span>
-                    <span class="stk-sep">|</span>
-                    <span class="stk-upside up">Potential Upside*: ↑ 40.60 %</span>
-                  </div>
-                </div>
-                <div class="stk-metric-col">
-                  <span class="stk-ltp">371.80</span>
-                  <span class="stk-diff up">↑ 18.60 (5.27 %)</span>
-                </div>
-                <button class="stk-add-btn" title="Add International Gemmol to Watchlist" onclick="window.addToWatchlist('International Gemmol', '371.80', '+5.27%');">+</button>
-              </div>
-
-              <div class="dash-stock-row">
-                <div class="stk-info-col">
-                  <div class="stk-name-row">
-                    <strong class="stk-symbol">Chennai Petro</strong>
-                    <span class="stk-vol">(Vol: 37,61,783k)</span>
-                  </div>
-                  <div class="stk-sub-meta">
-                    <span class="stk-score-badge"><span class="score-icon">▶</span> Stock Score: 8</span>
-                    <span class="stk-sep">|</span>
-                    <span class="stk-upside down">Potential Upside*: ↓ -17.80 %</span>
-                  </div>
-                </div>
-                <div class="stk-metric-col">
-                  <span class="stk-ltp">1,510</span>
-                  <span class="stk-diff up">↑ 56.30 (3.88 %)</span>
-                </div>
-                <button class="stk-add-btn" title="Add Chennai Petro to Watchlist" onclick="window.addToWatchlist('Chennai Petro', '1,510', '+3.88%');">+</button>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+    
 
     <!-- =====================================================================
          SECTION 5: CRYPTOCURRENCY NEWS
