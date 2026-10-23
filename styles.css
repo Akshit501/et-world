@@ -1066,27 +1066,86 @@ img {
 /* ==========================================================================
    LEFT & RIGHT GUTTER SKYSCRAPER ADS (Fills Left & Right Empty Spaces)
    ========================================================================== */
-/* Gutter Skyscraper Ads - Strictly in outer border/gutter, ZERO overlap with news section */
+/* Gutter Skyscraper Ads - Visible on laptop & desktop screens (>=1260px), strictly in outer border/gutter */
 .et-gutter-ad,
 .pwc-gutter-ad {
   position: fixed;
-  top: 140px;
-  width: 150px;
+  top: 135px;
   z-index: 85;
-  display: none !important;
+  display: none;
 }
 
-@media (min-width: 1640px) {
+/* Laptops (1260px - 1535px, e.g. 1366x768, 1440x900) */
+@media (min-width: 1260px) and (max-width: 1535px) {
+  :root {
+    --container-max: 1040px;
+  }
   .et-gutter-ad,
   .pwc-gutter-ad {
     display: block !important;
+    width: 120px !important;
   }
   .left-gutter-ad {
-    right: calc(50% + (var(--container-max) / 2) + 16px) !important;
+    right: calc(50% + 532px) !important;
     left: auto !important;
   }
   .right-gutter-ad {
-    left: calc(50% + (var(--container-max) / 2) + 16px) !important;
+    left: calc(50% + 532px) !important;
+    right: auto !important;
+  }
+  .pwc-sticky-card {
+    padding: 8px 8px 0 !important;
+  }
+  .pwc-title {
+    font-size: 10.5px !important;
+  }
+  .pwc-subtitle {
+    font-size: 8px !important;
+  }
+  .pwc-bullets li {
+    font-size: 7.5px !important;
+  }
+  .pwc-cta-text {
+    font-size: 8.5px !important;
+  }
+}
+
+/* Mid-range Desktop / 1080p scaled (1536px - 1679px) */
+@media (min-width: 1536px) and (max-width: 1679px) {
+  :root {
+    --container-max: 1140px;
+  }
+  .et-gutter-ad,
+  .pwc-gutter-ad {
+    display: block !important;
+    width: 135px !important;
+  }
+  .left-gutter-ad {
+    right: calc(50% + 584px) !important;
+    left: auto !important;
+  }
+  .right-gutter-ad {
+    left: calc(50% + 584px) !important;
+    right: auto !important;
+  }
+}
+
+/* Large / Ultra-wide Desktop (>=1680px) */
+@media (min-width: 1680px) {
+  :root {
+    --container-max: 1260px;
+  }
+  .et-gutter-ad,
+  .pwc-gutter-ad {
+    display: block !important;
+    width: 150px !important;
+  }
+  .left-gutter-ad {
+    right: calc(50% + 645px) !important;
+    left: auto !important;
+  }
+  .right-gutter-ad {
+    left: calc(50% + 645px) !important;
     right: auto !important;
   }
 }
