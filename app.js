@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScreenshotAds();
   initTopBarAndModals();
   initIndicesAndDashboards();
+  initFeaturedSeriesPodcast();
 });
 
 /* ==========================================================================
@@ -973,5 +974,88 @@ function initTopBarAndModals() {
   document.getElementById('signInAppleBtn')?.addEventListener('click', () => {
     showToast('✓ Signed in successfully with Apple ID.');
     setTimeout(() => closeModal(signInModal), 1000);
+  });
+}
+
+/* ==========================================================================
+   FEATURED SERIES PODCAST CONTROLLER (Reference Image)
+   Controls 2-page podcast rotation with ← BACK and NEXT → pill buttons,
+   and hooks up player modal with episode playback.
+   ========================================================================== */
+function initFeaturedSeriesPodcast() {
+  const prevBtn = document.getElementById('fSeriesPrevBtn');
+  const nextBtn = document.getElementById('fSeriesNextBtn');
+  const page1 = document.getElementById('fSeriesPage1');
+  const page2 = document.getElementById('fSeriesPage2');
+
+  let activePage = 1;
+
+  function switchPage(targetPage) {
+    if (targetPage === activePage) return;
+
+    const fromEl = activePage === 1 ? page1 : page2;
+    const toEl = targetPage === 1 ? page1 : page2;
+
+    if (!fromEl || !toEl) return;
+
+    // Fade out current
+    fromEl.style.opacity = '0';
+    fromEl.style.transform = targetPage > activePage ? 'translateX(-20px)' : 'translateX(20px)';
+
+    setTimeout(() => {
+      fromEl.style.display = 'none';
+      toEl.style.display = 'grid';
+      toEl.style.opacity = '0';
+      toEl.style.transform = targetPage > activePage ? 'translateX(20px)' : 'translateX(-20px)';
+
+      // Trigger reflow
+      void toEl.offsetWidth;
+
+      toEl.style.opacity = '1';
+      toEl.style.transform = 'translateX(0)';
+      activePage = targetPage;
+
+      if (typeof showToast === 'function') {
+        const desc = activePage === 1 ? 'Page 1: AI Agents & Enterprise Transformation' : 'Page 2: Compute Missions & Semiconductor Fabs';
+        showToast(`🎙️ Featured Series: ${desc}`);
+      }
+    }, 200);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const nextP = activePage === 1 ? 2 : 1;
+      switchPage(nextP);
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const prevP = activePage === 2 ? 1 : 2;
+      switchPage(prevP);
+    });
+  }
+
+  // Hook all featured series cards to video/podcast modal
+  document.querySelectorAll('.f-series-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Prevent double firing if clicking a link
+      if (e.target.tagName.toLowerCase() === 'a') {
+        e.preventDefault();
+      }
+      const title = card.dataset.videoTitle || card.querySelector('.f-series-title')?.textContent.trim() || 'ET AI Podcast';
+      const dur = card.dataset.videoDur || '28:00';
+
+      const modal = document.getElementById('videoModal');
+      const titleEl = document.getElementById('videoModalTitle');
+      if (modal && titleEl) {
+        titleEl.textContent = `🎙️ ET In Conversation: ${title}`;
+        modal.classList.add('open');
+      }
+
+      if (typeof showToast === 'function') {
+        showToast(`▶ Playing: "${title.slice(0, 45)}..." (${dur})`);
+      }
+    });
   });
 }
