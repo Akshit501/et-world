@@ -4681,4 +4681,336 @@ img {
   .science-grid-4 {
     grid-template-columns: 1fr;
   }
+}
+
+/* ==========================================================================
+   PANACHE SECTION (ET Panache: Luxury, Culture & Executive Living)
+   ========================================================================== */
+.panache-section {
+  margin: 32px 0 24px 0;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--ln);
+}
+
+.panache-subtag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mu);
+  text-transform: uppercase;
+  margin-left: 12px;
+}
+
+:root[data-theme="dark"] .panache-subtag {
+  color: #94a3b8;
+}
+
+.panache-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.panache-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 6px;
+  padding: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+:root[data-theme="dark"] .panache-card {
+  background: #151b26;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.panache-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.panache-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--ph);
+  margin-bottom: 12px;
+}
+
+.panache-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.panache-card:hover .panache-media img {
+  transform: scale(1.04);
+}
+
+.panache-pill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  color: #f8fafc;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 3px 7px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+}
+
+.panache-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 8px 0;
+  color: var(--tx);
+}
+
+.panache-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.panache-title a:hover {
+  color: var(--ac);
+}
+
+.panache-excerpt {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--tx-sec);
+  margin: 0;
+}
+
+/* ==========================================================================
+   ET PODCASTS SHOWCASE (Inside Videos & Podcasts Hub)
+   ========================================================================== */
+.vbox-podcasts-showcase {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vbox-podcasts-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.vbox-podcasts-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.podcast-mic-icon {
+  font-size: 18px;
+}
+
+.vbox-podcasts-title h4 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.podcast-subtext {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-left: 8px;
+}
+
+.vbox-podcasts-more {
+  color: #f1f5f9;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vbox-podcasts-more:hover {
+  color: #f87171;
+}
+
+.podcasts-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.podcast-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.podcast-card:hover {
+  transform: translateY(-2px);
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.podcast-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: #0f172a;
+}
+
+.podcast-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.podcast-card:hover .podcast-thumb-img {
+  transform: scale(1.05);
+}
+
+.podcast-play-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ac);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.podcast-play-btn:hover {
+  transform: scale(1.1);
+  background: #b91c1c;
+}
+
+.podcast-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.podcast-show-name {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #f87171;
+  letter-spacing: 0.05em;
+}
+
+.podcast-dur-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.podcast-ep-title {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+}
+
+.podcast-ep-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.podcast-ep-title a:hover {
+  color: #fca5a5;
+}
+
+.podcast-waveform {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 12px;
+  margin-top: auto;
+}
+
+.podcast-waveform .bar {
+  width: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  transition: height 0.2s ease, background 0.2s ease;
+}
+
+.podcast-card:hover .podcast-waveform .bar {
+  background: var(--ac);
+}
+
+.podcast-waveform .b1 { height: 4px; }
+.podcast-waveform .b2 { height: 10px; }
+.podcast-waveform .b3 { height: 7px; }
+.podcast-waveform .b4 { height: 12px; }
+.podcast-waveform .b5 { height: 5px; }
+
+@media (max-width: 1024px) {
+  .panache-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .podcasts-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .panache-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .podcasts-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .podcast-subtext {
+    display: none;
+  }
+}
+
+@keyframes soundWave {
+  0% {
+    height: 4px;
+    opacity: 0.6;
+  }
+  100% {
+    height: 14px;
+    opacity: 1;
+  }
 }\n

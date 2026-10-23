@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSummitTabs();
   initSportsTabs();
   initVideoPlayerModal();
+  initPodcastPlayer();
   initShortsPlayer();
   initSearch();
   initMobileDrawer();
@@ -256,6 +257,52 @@ function initShortsPlayer() {
         modal.classList.add('open');
       }
     });
+  });
+}
+
+/* ==========================================================================
+   ET PODCASTS AUDIO INTERACTION
+   ========================================================================== */
+function initPodcastPlayer() {
+  const podcastCards = document.querySelectorAll('.podcast-card');
+  let currentPlayingBtn = null;
+
+  podcastCards.forEach(card => {
+    const playBtn = card.querySelector('.podcast-play-btn');
+    const title = card.dataset.podcastTitle || card.querySelector('.podcast-ep-title')?.textContent.trim();
+    const waveformBars = card.querySelectorAll('.podcast-waveform .bar');
+
+    if (playBtn) {
+      playBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isCurrentlyPlaying = playBtn.textContent === '❚❚';
+
+        // Reset any other playing card
+        if (currentPlayingBtn && currentPlayingBtn !== playBtn) {
+          currentPlayingBtn.textContent = '▶';
+          const prevCard = currentPlayingBtn.closest('.podcast-card');
+          if (prevCard) {
+            prevCard.querySelectorAll('.podcast-waveform .bar').forEach(b => b.style.animation = 'none');
+          }
+        }
+
+        if (isCurrentlyPlaying) {
+          playBtn.textContent = '▶';
+          waveformBars.forEach(b => b.style.animation = 'none');
+          showToast(`Paused: "${title}"`);
+          currentPlayingBtn = null;
+        } else {
+          playBtn.textContent = '❚❚';
+          waveformBars.forEach((b, i) => {
+            b.style.animation = `soundWave 0.8s ease-in-out infinite alternate ${i * 0.15}s`;
+          });
+          showToast(`🎙️ Playing: "${title}"`);
+          currentPlayingBtn = playBtn;
+        }
+      });
+    }
   });
 }
 

@@ -24,28 +24,24 @@ Scan the QR code below with your phone's camera to immediately open the live sit
 
 ## ✨ Features & Layout Sections
 
-1. **Official ET Masthead & Network Navigation**
-   - Brand logo, English edition dropdown, IST live date-time, ePaper link, Watchlist, Subscribe, and festive sale banners.
-   - Dual-gutter skyscraper takeover ads (PwC Aspiring Women Leaders Scholarship).
+1. **ET World Primary Header & Navigation (On Top)**
+   - Iconic ET WORLD brand header positioned prominently at the top with interactive globe, regional edition navigation (`US | UK | Middle East | India Global | Asia...`), live date/time, and user tools.
+   - Channel navigation strip and dual-gutter skyscraper takeover ads.
 
-2. **ET Financial Markets Ticker**
+2. **ET Financial Markets Ticker & Economic Times Masthead**
    - Real-time global tickers for NIFTY 50, SENSEX, S&P 500, FTSE 100, Brent Crude, Gold, and USD/INR exchange rates.
 
-3. **ET World Summit 2026**
-   - Keynote coverage by Prime Minister Narendra Modi, Dr. S. Jaishankar, Nikhil Kamath, Mohini Dey, and Michael Sabia.
-   - Interactive live updates timeline and Editor's Pick banner.
+3. **News & Editorial Hubs**
+   - **Top Stories**: 3-column lead layout (Global ET World lead hero, stacked stories, and sponsored cards).
+   - **Panache (ET Panache)**: Luxury, high-end horology, billionaire stealth-wealth real estate, and executive longevity protocols.
+   - **India News**: Dedicated domestic news and legal reporting grid.
+   - **Opinion & Blogs**: Columnist op-eds with author avatars.
 
-4. **News & Analysis Hubs**
-   - **Top Stories**: 3-column lead layout (Stage Hero, stacked news items, and sponsored cards).
-   - **Offbeat**: Engaging off-track features and human interest stories.
-   - **India**: Dedicated domestic news and legal reporting grid.
-   - **Opinion & Blogs**: Prominent columnist op-eds with author avatars.
-
-5. **Multimedia & Interactive Hubs**
-   - **Shorts**: 9:16 vertical video reel cards with custom runtime tags.
+4. **Multimedia Hub: Videos & Podcasts**
    - **Videos Hub**: Deep navy multimedia container with interactive video modal playback.
+   - **ET Podcasts**: Integrated podcast showcase featuring *The Morning Brief*, *Market Makers*, *Tech Tonic*, and *The Global View* with interactive audio playback and sound waveforms.
 
-6. **Science, Regional & Culture Sections**
+5. **Science, Regional & Culture Sections**
    - **Science & Knowledge**: 4-column responsive grid covering astronomy, space exploration, and breakthrough tech.
    - **India Global & Study Abroad**: Side-by-side playcard layout with featured stories and vertical list stacks.
    - **Climate & Environment & Lifestyle**: Dual playcards highlighting global environmental studies and lifestyle news.

@@ -128,6 +128,61 @@ HTML_CONTENT = """<!DOCTYPE html>
     </div>
   </nav>
 
+  <!-- Primary ET World Regional Navigation Header -->
+  <header class="hd" id="mainHeader">
+    <div class="in container-fit">
+      
+      <!-- Left: Hamburger Menu -->
+      <div class="header-left-tools">
+        <button class="menu-search-btn" id="menuToggleBtn" aria-label="Toggle Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Center-Left: Iconic ET WORLD Logo -->
+      <a href="#" class="brand-logo" id="siteLogo">
+        <span class="et-badge">ET</span>
+        <span class="logo-world">
+          W<span class="globe-o"><span class="globe-inner"></span></span>RLD
+        </span>
+      </a>
+
+      <!-- Center: Edition Navigation Links -->
+      <nav class="nav" id="mainNav" aria-label="Regional Editions">
+        <a href="#us" class="nav-link">US</a>
+        <a href="#uk" class="nav-link">UK</a>
+        <a href="#middle-east" class="nav-link">Middle East</a>
+        <a href="#india-global" class="nav-link on">India Global</a>
+        <a href="#asia" class="nav-link">Asia</a>
+        <a href="#europe" class="nav-link">Europe</a>
+        <a href="#australia" class="nav-link">Australia</a>
+        <a href="#americas" class="nav-link">Americas</a>
+        <a href="#africa" class="nav-link">Africa</a>
+        <a href="#videos-section" class="nav-link">Videos</a>
+        <a href="#sports-section" class="nav-link">Sports</a>
+        <a href="#bookmarks" class="nav-link bookmark-icon" id="headerBookmarkBtn" title="Bookmarks">≡♡</a>
+      </nav>
+
+      <!-- Right: Date & Time + User Profile Avatar -->
+      <div class="header-right-meta">
+        <div class="header-datetime" id="headerDateTime">
+          October 22, 2026<br>
+          <span class="header-time">11:11 AM IST</span>
+        </div>
+        <button class="usr-avatar-btn" id="userProfileBtn" aria-label="User Account" title="User Profile">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
   <!-- =====================================================================
        THE ECONOMIC TIMES OFFICIAL MASTHEAD (Permanent, Reference Screenshot)
        ===================================================================== -->
@@ -229,60 +284,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     </div>
   </div>
 
-  <!-- Primary ET World Regional Navigation Header -->
-  <header class="hd" id="mainHeader">
-    <div class="in container-fit">
-      
-      <!-- Left: Hamburger Menu -->
-      <div class="header-left-tools">
-        <button class="menu-search-btn" id="menuToggleBtn" aria-label="Toggle Menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
 
-      <!-- Center-Left: Iconic ET WORLD Logo -->
-      <a href="#" class="brand-logo" id="siteLogo">
-        <span class="et-badge">ET</span>
-        <span class="logo-world">
-          W<span class="globe-o"><span class="globe-inner"></span></span>RLD
-        </span>
-      </a>
-
-      <!-- Center: Edition Navigation Links -->
-      <nav class="nav" id="mainNav" aria-label="Regional Editions">
-        <a href="#us" class="nav-link">US</a>
-        <a href="#uk" class="nav-link">UK</a>
-        <a href="#middle-east" class="nav-link">Middle East</a>
-        <a href="#india-global" class="nav-link on">India Global</a>
-        <a href="#asia" class="nav-link">Asia</a>
-        <a href="#europe" class="nav-link">Europe</a>
-        <a href="#australia" class="nav-link">Australia</a>
-        <a href="#americas" class="nav-link">Americas</a>
-        <a href="#africa" class="nav-link">Africa</a>
-        <a href="#videos-section" class="nav-link">Videos</a>
-        <a href="#sports-section" class="nav-link">Sports</a>
-        <a href="#bookmarks" class="nav-link bookmark-icon" id="headerBookmarkBtn" title="Bookmarks">≡♡</a>
-      </nav>
-
-      <!-- Right: Date & Time + User Profile Avatar -->
-      <div class="header-right-meta">
-        <div class="header-datetime" id="headerDateTime">
-          October 22, 2026<br>
-          <span class="header-time">11:11 AM IST</span>
-        </div>
-        <button class="usr-avatar-btn" id="userProfileBtn" aria-label="User Account" title="User Profile">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
-        </button>
-      </div>
-
-    </div>
-  </header>
 
   <!-- Mobile Drawer Menu -->
   <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
@@ -314,12 +316,18 @@ HTML_CONTENT = """<!DOCTYPE html>
       </div>
       <h4 class="drawer-label">Sections</h4>
       <div class="drawer-links">
-        <a href="#summit">ET World Summit 2026</a>
-        <a href="#offbeat">Offbeat</a>
+        <a href="#panache">Panache (Executive Lifestyle)</a>
         <a href="#india-section">India News</a>
         <a href="#opinion">Opinion &amp; Blogs</a>
-        <a href="#shorts-section">Shorts</a>
-        <a href="#videos-section">Must Watch Videos</a>
+        <a href="#videos-section">Videos &amp; Podcasts</a>
+        <a href="#science-knowledge">Science &amp; Knowledge</a>
+        <a href="#india-global">India Global</a>
+        <a href="#study-abroad">Study Abroad</a>
+        <a href="#climate-environment">Climate &amp; Environment</a>
+        <a href="#lifestyle">Lifestyle</a>
+        <a href="#movies-entertainment">Movies &amp; Entertainment</a>
+        <a href="#gadgets-tech">Gadgets &amp; Tech</a>
+        <a href="#sports-section">Sports</a>
       </div>
     </div>
   </aside>
@@ -327,14 +335,6 @@ HTML_CONTENT = """<!DOCTYPE html>
   <!-- Main Container: Centered with Proper Margin and Fit to Border -->
   <main id="app" class="main-content container-fit">
 
-    <!-- TOP LEADERBOARD: ET World Summit 2026 Watch Live Banner (Exact Reference 1) -->
-    <div class="summit-watch-live-banner" id="summitLiveBanner">
-      <div class="banner-left-brand">
-        <div class="summit-mini-logo">
-          <span class="sml-et"><span class="sml-et-box">ET</span> WORLD</span>
-          <span class="sml-sub">SUMMIT 2026</span>
-          <span class="sml-tag">A WORLD BETWEEN ORDERS</span>
-        </div>
         <div class="banner-live-callout">
           <span class="watch-live-text"><span class="banner-live-dot">●</span> WATCH LIVE</span>
           <span class="only-on-text">ONLY ON <strong>THE ECONOMIC TIMES</strong></span>
@@ -380,17 +380,17 @@ HTML_CONTENT = """<!DOCTYPE html>
          ===================================================================== -->
     <div class="top-lead-grid">
       
-      <!-- Column 1 (Left): Stage Hero -->
+      <!-- Column 1 (Left): ET World Global Lead Hero -->
       <article class="top-hero-card">
-        <a href="#summit-lead" class="top-hero-media">
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&auto=format&fit=crop&q=80" alt="ET World Summit Stage" loading="eager">
-          <div class="hero-live-pill">● LIVE IN NEW DELHI</div>
+        <a href="#global-lead" class="top-hero-media">
+          <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=900&auto=format&fit=crop&q=80" alt="Global Trade and Financial Corridors" loading="eager">
+          <div class="hero-live-pill">● ET WORLD EXCLUSIVE</div>
         </a>
         <h2 class="top-hero-title">
-          <a href="#summit-lead">ET World Summit LIVE: Global Leaders To Discuss 'World Between Orders'</a>
+          <a href="#global-lead">Global Trade &amp; Capital Corridors: How Emerging Blocs Are Rewiring Cross-Border Finance</a>
         </h2>
         <p class="top-hero-excerpt">
-          World leaders, global central bankers, and visionary tech founders assemble at the landmark ET World Summit 2026 to chart out resilient trade frameworks, sovereign AI infrastructure, and sustainable growth corridors.
+          As central banks recalibrate monetary trajectories and sovereign trade routes realign across Asia, Europe, and the Americas, international institutions are establishing resilient financial architecture for a multipolar global economy.
         </p>
       </article>
 
@@ -468,155 +468,55 @@ HTML_CONTENT = """<!DOCTYPE html>
     </div>
 
 
-    <!-- =====================================================================
-         SECTION 2: ET WORLD SUMMIT 2026 (Exact Reference Screenshot 2)
-         Deep Purple Card + 3 Cards + Live Updates Timeline + Editor's Pick
-         ===================================================================== -->
-    <section class="summit-hub-section" id="summit">
-      <div class="summit-hub-header">
-        <h2 class="summit-hub-title">ET World Summit 2026</h2>
-        <div class="summit-hub-tabs" id="summitTabs">
-          <span class="hub-tab on" data-tab="stories">Stories</span>
-          <span class="hub-tab" data-tab="videos">Videos</span>
-          <span class="hub-tab" data-tab="key-faces">Key Faces</span>
-        </div>
-      </div>
-
-      <div class="summit-hub-layout">
-        
-        <!-- Left: Summit Main Grid (Purple Card + 3 Cards) -->
-        <div class="summit-main-block">
-          <div class="summit-cards-row">
-            
-            <!-- Left Purple Hero Card -->
-            <div class="summit-purple-card">
-              <div class="purple-logo-box">
-                <span class="pl-et-row"><span class="pl-et-box">ET</span> WORLD</span>
-                <span class="pl-summit">SUMMIT</span>
-                <span class="pl-year">2026</span>
-              </div>
-              <h3 class="purple-theme-title">A World Between Orders</h3>
-              <div class="purple-date-loc">
-                <span>Oct 22–Oct 23, 2026</span>
-                <span>New Delhi</span>
-              </div>
-            </div>
-
-            <!-- Card 1: PM Modi, S Jaishankar, Nikhil Kamath -->
-            <article class="summit-news-card">
-              <a href="#summit-card-1" class="sn-media">
-                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&auto=format&fit=crop&q=80" alt="PM Modi and Key Speakers" loading="lazy">
-                <span class="sn-watch-overlay">WATCH LIVE<br><small>ONLY ON ET NETWORK</small></span>
-              </a>
-              <h4 class="sn-title">
-                <a href="#summit-card-1">ET World Summit 2026 Live: PM Modi, S Jaishankar, Nikhil Kamath Among Key Speakers</a>
-              </h4>
-            </article>
-
-            <!-- Card 2: Bassist Mohini Dey -->
-            <article class="summit-news-card">
-              <a href="#summit-card-2" class="sn-media">
-                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=80" alt="Bassist Mohini Dey" loading="lazy">
-              </a>
-              <h4 class="sn-title">
-                <a href="#summit-card-2">Live: Bassist Mohini Dey Takes The Stage With Her Band At ET World Summit</a>
-              </h4>
-            </article>
-
-            <!-- Card 3: Full Day Schedule -->
-            <article class="summit-news-card">
-              <a href="#summit-card-3" class="sn-media">
-                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=500&auto=format&fit=crop&q=80" alt="Summit Full Day Schedule" loading="lazy">
-                <span class="sn-watch-overlay">WATCH LIVE<br><small>ONLY ON ET NETWORK</small></span>
-              </a>
-              <h4 class="sn-title">
-                <a href="#summit-card-3">ET World Summit 2026: Full Day Schedule, Key Speakers And Sessions</a>
-              </h4>
-            </article>
-
-          </div>
-
-          <!-- Bottom: Live Updates Timeline Strip -->
-          <div class="summit-live-timeline-strip">
-            <div class="live-updates-badge">
-              <span class="pulse-pink-dot"></span> Live Updates
-            </div>
-            <div class="timeline-items-track">
-              
-              <div class="timeline-item">
-                <div class="tl-dot"></div>
-                <span class="tl-time">11:03 AM | Oct 22, 2026</span>
-                <p class="tl-text">
-                  <a href="#tl-1">ET World Summit 2026 LIVE: Mohini Dey Says She's 'Fortunate To Be Born In India'</a>
-                </p>
-              </div>
-
-              <div class="timeline-item">
-                <div class="tl-dot"></div>
-                <span class="tl-time">10:59 AM | Oct 22, 2026</span>
-                <p class="tl-text">
-                  <a href="#tl-2">ET World Summit 2026 LIVE: Mohini Dey Sets The Stage On Fire With An Electrifying Performance</a>
-                </p>
-              </div>
-
-              <div class="timeline-item">
-                <div class="tl-dot"></div>
-                <span class="tl-time">10:30 AM | Oct 22, 2026</span>
-                <p class="tl-text">
-                  <a href="#tl-3">ET World Summit 2026 LIVE: Mohini Dey Says She Moved To US To "Explore The World"</a>
-                </p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Editor's Pick Card -->
-        <aside class="summit-side-pick">
-          <span class="editor-pick-badge">EDITOR'S PICK</span>
-          <h3 class="editor-pick-title">
-            <a href="#editor-pick">105 US Lawmakers Urge FBI Hate Crime Probe Into US Temple Mass Shooting Plot</a>
-          </h3>
-        </aside>
-
-      </div>
-    </section>
 
     <!-- =====================================================================
-         SECTION 3: OFFBEAT › (Exact Reference Screenshot 3)
-         3 Large Cards Across
+         SECTION: PANACHE › (The Economic Times Panache)
+         Luxury, Executive Living, Horology & Culture
          ===================================================================== -->
-    <section class="portal-section" id="offbeat">
+    <section class="portal-section panache-section" id="panache">
       <div class="sec-heading">
-        <h2><a href="#offbeat-all">Offbeat ›</a></h2>
+        <h2><a href="#panache">Panache <span class="sec-chevron">›</span></a></h2>
+        <span class="panache-subtag">LUXURY, CULTURE &amp; EXECUTIVE LIVING</span>
       </div>
-      <div class="offbeat-grid-3">
+      <div class="panache-grid-3">
         
-        <article class="offbeat-card">
-          <a href="#offbeat-1" class="offbeat-media">
-            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=80" alt="Darshan Magdum boy band" loading="lazy">
+        <article class="panache-card">
+          <a href="#panache-1" class="panache-media">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&auto=format&fit=crop&q=80" alt="Luxury Timepieces" loading="lazy">
+            <span class="panache-pill">HOROLOGY &amp; WEALTH</span>
           </a>
-          <h3 class="offbeat-title">
-            <a href="#offbeat-1">Indian Singer Darshan Magdum Finally Joins US Boy Band After Visa Battle</a>
+          <h3 class="panache-title">
+            <a href="#panache-1">Inside The Rare Patek Philippe &amp; Audemars Piguet Timepieces Driving Record Global Auctions</a>
           </h3>
+          <p class="panache-excerpt">
+            How vintage grand complications and sovereign collector demand turned high-end mechanical horology into a premier alternative asset class.
+          </p>
         </article>
 
-        <article class="offbeat-card">
-          <a href="#offbeat-2" class="offbeat-media">
-            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=500&auto=format&fit=crop&q=80" alt="Man quits 9 to 6 job" loading="lazy">
+        <article class="panache-card">
+          <a href="#panache-2" class="panache-media">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop&q=80" alt="Billionaire Estates" loading="lazy">
+            <span class="panache-pill">EXECUTIVE LIVING</span>
           </a>
-          <h3 class="offbeat-title">
-            <a href="#offbeat-2">Man Quits 9-To-6 Job, Now Earns ₹2.5 Lakh A Month: "No More EMI Worries"</a>
+          <h3 class="panache-title">
+            <a href="#panache-2">The Rise Of Stealth-Wealth Real Estate: Why Global Titans Are Quietly Buying Ultra-Private Havens</a>
           </h3>
+          <p class="panache-excerpt">
+            From Lake Como villas to private New Zealand sanctuaries, high-net-worth executives prioritize autonomous estates with sovereign privacy.
+          </p>
         </article>
 
-        <article class="offbeat-card">
-          <a href="#offbeat-3" class="offbeat-media">
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=80" alt="Anthropic offering salary package" loading="lazy">
+        <article class="panache-card">
+          <a href="#panache-3" class="panache-media">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&auto=format&fit=crop&q=80" alt="Executive Longevity" loading="lazy">
+            <span class="panache-pill">WELLNESS &amp; TECH</span>
           </a>
-          <h3 class="offbeat-title">
-            <a href="#offbeat-3">Anthropic Offering ₹3.2 Crore Salary Package To Hire Human Writer. Check Details</a>
+          <h3 class="panache-title">
+            <a href="#panache-3">The $2-Million-A-Year Executive Longevity Protocol: What Silicon Valley Founders Swear By</a>
           </h3>
+          <p class="panache-excerpt">
+            Cellular biomarkers, hyperbaric oxygen therapy, and AI biological clocks replace traditional executive health routines.
+          </p>
         </article>
 
       </div>
@@ -741,96 +641,6 @@ HTML_CONTENT = """<!DOCTYPE html>
       </div>
     </section>
 
-    <!-- =====================================================================
-         SECTION 6: SHORTS › (Exact Reference Screenshot 4)
-         6 Vertical 9:16 Video Cards
-         ===================================================================== -->
-    <section class="portal-section" id="shorts-section">
-      <div class="sec-heading">
-        <h2><a href="#shorts-all">Shorts ›</a></h2>
-      </div>
-      <div class="shorts-reel-track">
-        
-        <!-- Short 1 -->
-        <div class="short-reel-card" data-short-title="Paris is going to be a Muslim city very soon">
-          <div class="short-top-brand">
-            <span class="sr-et-badge">ET</span>
-            <span class="sr-world">WORLD</span>
-          </div>
-          <div class="short-caption">
-            "PARIS IS GOING TO BE A MUSLIM CITY VERY SOON": PRESIDENT TRUMP
-          </div>
-          <img src="https://images.unsplash.com/photo-1580130543209-a72a15c61a4f?w=350&auto=format&fit=crop&q=80" alt="Trump on Paris" class="short-bg-img" loading="lazy">
-          <div class="short-bottom-dur">▶ 0:54</div>
-        </div>
-
-        <!-- Short 2 -->
-        <div class="short-reel-card" data-short-title="Trump blames immigration for protests in France">
-          <div class="short-top-brand">
-            <span class="sr-et-badge">ET</span>
-            <span class="sr-world">WORLD</span>
-          </div>
-          <div class="short-caption">
-            TRUMP BLAMES IMMIGRATION FOR PROTESTS IN FRANCE
-          </div>
-          <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=350&auto=format&fit=crop&q=80" alt="Trump on Immigration" class="short-bg-img" loading="lazy">
-          <div class="short-bottom-dur">▶ 0:46</div>
-        </div>
-
-        <!-- Short 3 -->
-        <div class="short-reel-card" data-short-title="JD Vance heckled over Epstein files">
-          <div class="short-top-brand">
-            <span class="sr-et-badge">ET</span>
-            <span class="sr-world">WORLD</span>
-          </div>
-          <div class="short-caption">
-            JD VANCE HECKLED OVER EPSTEIN FILES AT NORTH CAROLINA RALLY
-          </div>
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=350&auto=format&fit=crop&q=80" alt="JD Vance at Rally" class="short-bg-img" loading="lazy">
-          <div class="short-bottom-dur">▶ 0:38</div>
-        </div>
-
-        <!-- Short 4 -->
-        <div class="short-reel-card" data-short-title="The most important midterm election">
-          <div class="short-top-brand">
-            <span class="sr-et-badge">ET</span>
-            <span class="sr-world">WORLD</span>
-          </div>
-          <div class="short-caption">
-            "THE MOST IMPORTANT MIDTERM ELECTION WE'VE EVER HAD": TRUMP
-          </div>
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=350&auto=format&fit=crop&q=80" alt="Trump Midterm" class="short-bg-img" loading="lazy">
-          <div class="short-bottom-dur">▶ 0:39</div>
-        </div>
-
-        <!-- Short 5 -->
-        <div class="short-reel-card" data-short-title="Trump says Zacharia should reconsider role">
-          <div class="short-top-brand">
-            <span class="sr-et-badge">ET</span>
-            <span class="sr-world">WORLD</span>
-          </div>
-          <div class="short-caption">
-            TRUMP SAYS ZACHARIA SHOULD RECONSIDER ROLE AS WHITE HOUSE PRESS SECY
-          </div>
-          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=350&auto=format&fit=crop&q=80" alt="Trump Press Secy" class="short-bg-img" loading="lazy">
-          <div class="short-bottom-dur">▶ 0:30</div>
-        </div>
-
-        <!-- Short 6 -->
-        <div class="short-reel-card" data-short-title="Was treated very badly by media: Trump">
-          <div class="short-top-brand">
-            <span class="sr-et-badge">ET</span>
-            <span class="sr-world">WORLD</span>
-          </div>
-          <div class="short-caption">
-            "WAS TREATED VERY BADLY BY MEDIA": TRUMP ON EX-WH PRESS SECY KATIE ZACHARIA
-          </div>
-          <img src="https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?w=350&auto=format&fit=crop&q=80" alt="Trump on Media" class="short-bg-img" loading="lazy">
-          <div class="short-bottom-dur">▶ 0:59</div>
-        </div>
-
-      </div>
-    </section>
 
     <!-- =====================================================================
          SECTION 7: VIDEOS › (Exact Reference Screenshot 5)
@@ -838,7 +648,7 @@ HTML_CONTENT = """<!DOCTYPE html>
          ===================================================================== -->
     <section class="portal-section" id="videos-section">
       <div class="sec-heading">
-        <h2><a href="#videos-all">Videos ›</a></h2>
+        <h2><a href="#videos-all">Videos &amp; Podcasts <span class="sec-chevron">›</span></a></h2>
       </div>
 
       <div class="videos-blue-box">
@@ -846,6 +656,7 @@ HTML_CONTENT = """<!DOCTYPE html>
         <!-- Channels Bar Row on Top of Video Hub -->
         <div class="vbox-channel-bar">
           <span class="vbox-pill active">Featured Video</span>
+          <span class="vbox-pill vbox-podcast-pill">🎙️ Podcasts</span>
           <span class="vbox-channel-logo">ET NOW</span>
           <span class="vbox-channel-logo">ET PRIME</span>
           <span class="vbox-channel-logo">ET MARKETS</span>
@@ -922,6 +733,91 @@ HTML_CONTENT = """<!DOCTYPE html>
           </aside>
 
         </div>
+
+        <!-- ET Podcasts Showcase inside Videos Hub -->
+        <div class="vbox-podcasts-showcase" id="podcasts-hub">
+          <div class="vbox-podcasts-head">
+            <div class="vbox-podcasts-title">
+              <span class="podcast-mic-icon">🎙️</span>
+              <h4>ET Podcasts</h4>
+              <span class="podcast-subtext">Business Intelligence, Tech Frontiers &amp; Market Insights</span>
+            </div>
+            <a href="#podcasts-all" class="vbox-podcasts-more">All Episodes →</a>
+          </div>
+
+          <div class="podcasts-grid-4">
+            
+            <article class="podcast-card" data-podcast-title="The Morning Brief: India's Semiconductor Ambitions & The Global Chip Race" data-podcast-dur="24:18">
+              <div class="podcast-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=300&auto=format&fit=crop&q=80" alt="The Morning Brief" class="podcast-thumb-img" loading="lazy">
+                <button class="podcast-play-btn" aria-label="Play Episode">▶</button>
+              </div>
+              <div class="podcast-meta-row">
+                <span class="podcast-show-name">The Morning Brief</span>
+                <span class="podcast-dur-badge">24:18</span>
+              </div>
+              <h5 class="podcast-ep-title">
+                <a href="#pod-1">The Semiconductor Race: India's Fab Ambitions &amp; Global Supply Chains</a>
+              </h5>
+              <div class="podcast-waveform">
+                <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span><span class="bar b5"></span>
+              </div>
+            </article>
+
+            <article class="podcast-card" data-podcast-title="Market Makers: Global Equities & FII Capital Reallocation" data-podcast-dur="31:45">
+              <div class="podcast-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=300&auto=format&fit=crop&q=80" alt="Market Makers" class="podcast-thumb-img" loading="lazy">
+                <button class="podcast-play-btn" aria-label="Play Episode">▶</button>
+              </div>
+              <div class="podcast-meta-row">
+                <span class="podcast-show-name">Market Makers</span>
+                <span class="podcast-dur-badge">31:45</span>
+              </div>
+              <h5 class="podcast-ep-title">
+                <a href="#pod-2">Global Valuations &amp; Central Bank Easing: Navigating Market Turbulence</a>
+              </h5>
+              <div class="podcast-waveform">
+                <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span><span class="bar b5"></span>
+              </div>
+            </article>
+
+            <article class="podcast-card" data-podcast-title="Tech Tonic: Agentic AI & The Autonomous Enterprise" data-podcast-dur="19:22">
+              <div class="podcast-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&auto=format&fit=crop&q=80" alt="Tech Tonic" class="podcast-thumb-img" loading="lazy">
+                <button class="podcast-play-btn" aria-label="Play Episode">▶</button>
+              </div>
+              <div class="podcast-meta-row">
+                <span class="podcast-show-name">Tech Tonic</span>
+                <span class="podcast-dur-badge">19:22</span>
+              </div>
+              <h5 class="podcast-ep-title">
+                <a href="#pod-3">Agentic AI in Enterprise: What Fortune 500 CTOs Are Deploying in 2026</a>
+              </h5>
+              <div class="podcast-waveform">
+                <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span><span class="bar b5"></span>
+              </div>
+            </article>
+
+            <article class="podcast-card" data-podcast-title="The Global View: Geopolitics, Maritime Chokepoints & Energy Corridors" data-podcast-dur="22:50">
+              <div class="podcast-thumb-wrap">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&auto=format&fit=crop&q=80" alt="The Global View" class="podcast-thumb-img" loading="lazy">
+                <button class="podcast-play-btn" aria-label="Play Episode">▶</button>
+              </div>
+              <div class="podcast-meta-row">
+                <span class="podcast-show-name">The Global View</span>
+                <span class="podcast-dur-badge">22:50</span>
+              </div>
+              <h5 class="podcast-ep-title">
+                <a href="#pod-4">Geopolitical Hotspots: Maritime Chokepoints &amp; Future Freight Trajectories</a>
+              </h5>
+              <div class="podcast-waveform">
+                <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span><span class="bar b5"></span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
