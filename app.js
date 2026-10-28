@@ -1065,135 +1065,303 @@ function initFeaturedSeriesPodcast() {
    Handles 'In Progress', 'Upcoming', and 'Recent' tab switching in playcard,
    plus category filtering tabs (All, Cricket, Football, Tennis).
    ========================================================================== */
+/* ==========================================================================
+   SPORTS PLAYCARD CONTROLLER (Exact Reference Screenshot)
+   Handles 'In Progress', 'Upcoming', and 'Recent' tab switching in playcard,
+   plus category filtering tabs (All, Cricket, Football, Tennis).
+   ========================================================================== */
 function initSportsPlaycard() {
   const pcTabs = document.querySelectorAll('.playcard-tabs .pc-tab');
   const pcBody = document.getElementById('playcardContent');
 
   const playcardDatasets = {
     inprogress: `
-      <div class="playcard-top-row">
-        <div class="playcard-badge-info">
-          <span class="pc-live-dot">● LIVE</span>
-          <span class="pc-match-title" title="Match 7, ICC Men's T20 World Cup Africa Qualifier">Match 7, ICC Men's T20 World Cup Afri...</span>
+      <!-- MATCH 1: BAN vs WI -->
+      <div class="pc-match-card">
+        <div class="playcard-top-row">
+          <div class="playcard-badge-info">
+            <span class="pc-live-dot">LIVE</span>
+            <span class="pc-match-title" title="1st Test, West Indies in Bangladesh, 2 Test Series">1st Test, West Indies in Bangladesh, 2 T...</span>
+          </div>
+          <button class="pc-bell-btn" title="Toggle Match Notifications" onclick="showToast('🔔 Notifications enabled for WI in Bangladesh Test');">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </button>
         </div>
-        <button class="pc-bell-btn" title="Toggle Match Notifications" onclick="showToast('🔔 Match notifications enabled for ICC T20 Qualifier');">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-        </button>
+
+        <div class="pc-status-line">Day 1 Lunch</div>
+
+        <div class="pc-scores-block">
+          <div class="pc-team-line">
+            <div class="pc-team-name-col">
+              <span class="flag-circle ban-flag" title="Bangladesh">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#006a4e"/><circle cx="9" cy="10" r="4.5" fill="#f42a41"/></svg>
+              </span>
+              <strong class="pc-team-code">BAN</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <strong class="score-runs">96/2</strong>
+              <span class="score-overs">(29.0)</span>
+            </div>
+          </div>
+
+          <div class="pc-team-line muted">
+            <div class="pc-team-name-col">
+              <span class="flag-circle wi-flag" title="West Indies">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#7b1126"/><circle cx="10" cy="10" r="6" fill="#ffc72c"/><path d="M7 13 L10 7 L13 13 Z" fill="#7b1126"/></svg>
+              </span>
+              <strong class="pc-team-code">WI</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <span class="score-yet">Yet To Bat</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pc-footer-row">
+          <span class="pc-equation-text">Bangladesh elected to bat</span>
+          <span class="pc-crr-badge">CRR: 3.31</span>
+        </div>
       </div>
 
-      <div class="pc-status-line">Play In Progress</div>
+      <!-- Match Divider -->
+      <div class="pc-match-divider"></div>
 
-      <div class="pc-scores-block">
-        <div class="pc-team-line">
-          <div class="pc-team-name-col">
-            <span class="pc-team-badge ngr-badge">🇳🇬</span>
-            <strong class="pc-team-code">NGR</strong>
+      <!-- MATCH 2: SA vs AUS -->
+      <div class="pc-match-card">
+        <div class="playcard-top-row">
+          <div class="playcard-badge-info">
+            <span class="pc-match-title" title="3rd Test, Australia in South Africa, 3 Test Series">3rd Test, Australia in South Africa, 3 Test Seri...</span>
           </div>
-          <div class="pc-team-score-col">
-            <strong class="score-runs">60/1</strong>
-            <span class="score-overs">(5.1)</span>
+          <button class="pc-bell-btn" title="Toggle Match Notifications" onclick="showToast('🔔 Notifications enabled for Australia in South Africa Test');">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </button>
+        </div>
+
+        <div class="pc-status-line">Day 1 Stumps</div>
+
+        <div class="pc-scores-block">
+          <div class="pc-team-line">
+            <div class="pc-team-name-col">
+              <span class="flag-circle sa-flag" title="South Africa">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#007749"/><path d="M0 0 H20 V10 H0 Z" fill="#e03c31"/><path d="M0 10 H20 V20 H0 Z" fill="#001489"/><polygon points="0,0 9,10 0,20" fill="#000"/><polygon points="0,2 7,10 0,18" fill="#ffb81c"/><polygon points="0,4 5,10 0,16" fill="#007749"/></svg>
+              </span>
+              <strong class="pc-team-code">SA</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <strong class="score-runs">329</strong>
+              <span class="score-overs">(82.3)</span>
+            </div>
+          </div>
+
+          <div class="pc-team-line muted">
+            <div class="pc-team-name-col">
+              <span class="flag-circle aus-flag" title="Australia">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#00247d"/><path d="M0 0 H9 V9 H0 Z" fill="#00247d"/><path d="M0 0 L9 9 M9 0 L0 9" stroke="#fff" stroke-width="1.8"/><path d="M4.5 0 V9 M0 4.5 H9" stroke="#cf142b" stroke-width="1.2"/><circle cx="14" cy="5" r="1" fill="#fff"/><circle cx="12" cy="14" r="1" fill="#fff"/><circle cx="16" cy="11" r="1" fill="#fff"/><circle cx="15" cy="16" r="0.8" fill="#fff"/></svg>
+              </span>
+              <strong class="pc-team-code">AUS</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <span class="score-yet">Yet To Bat</span>
+            </div>
           </div>
         </div>
 
-        <div class="pc-team-line muted">
-          <div class="pc-team-name-col">
-            <span class="pc-team-badge moz-badge">🇲🇿</span>
-            <strong class="pc-team-code">MOZ</strong>
-          </div>
-          <div class="pc-team-score-col">
-            <span class="score-runs">93</span>
-            <span class="score-overs">(19.4)</span>
-          </div>
+        <div class="pc-footer-row">
+          <span class="pc-equation-text">Australia elected to field</span>
+          <span class="pc-crr-badge">CRR: 4.00</span>
         </div>
-      </div>
-
-      <div class="pc-footer-row">
-        <span class="pc-equation-text">Nigeria need 34 runs in 89 balls at 2.29 rpo</span>
-        <span class="pc-crr-badge">CRR: 11.76</span>
       </div>
     `,
 
     upcoming: `
-      <div class="playcard-top-row">
-        <div class="playcard-badge-info">
-          <span class="pc-live-dot" style="background:#2563eb;">UPCOMING</span>
-          <span class="pc-match-title" title="Border-Gavaskar Trophy · 5th Test (Sydney)">Border-Gavaskar Trophy · 5th Test</span>
+      <!-- UPCOMING MATCH 1: IND vs ENG -->
+      <div class="pc-match-card">
+        <div class="playcard-top-row">
+          <div class="playcard-badge-info">
+            <span class="pc-live-dot" style="background:#2563eb;">UPCOMING</span>
+            <span class="pc-match-title" title="4th Test, India in England, 5 Test Series">4th Test, India in England, 5 Test Series</span>
+          </div>
+          <button class="pc-bell-btn" title="Set Match Reminder" onclick="showToast('⏰ Reminder set for 4th Test: IND vs ENG');">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </button>
         </div>
-        <button class="pc-bell-btn" title="Set Match Reminder" onclick="showToast('⏰ Reminder set for 5th Test: IND vs AUS');">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-        </button>
+
+        <div class="pc-status-line" style="color:#60a5fa;">Starts Tomorrow · 03:30 PM IST</div>
+
+        <div class="pc-scores-block">
+          <div class="pc-team-line">
+            <div class="pc-team-name-col">
+              <span class="flag-circle" title="India">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#ff9933"/><circle cx="10" cy="10" r="6" fill="#ffffff"/><circle cx="10" cy="10" r="3" fill="#000080"/><path d="M0 13 H20 V20 H0 Z" fill="#138808"/></svg>
+              </span>
+              <strong class="pc-team-code">IND</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <span class="score-yet">Old Trafford</span>
+            </div>
+          </div>
+
+          <div class="pc-team-line muted">
+            <div class="pc-team-name-col">
+              <span class="flag-circle" title="England">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#ffffff"/><path d="M8 0 H12 V20 H8 Z" fill="#cf142b"/><path d="M0 8 H20 V12 H0 Z" fill="#cf142b"/></svg>
+              </span>
+              <strong class="pc-team-code">ENG</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <span class="score-yet">Series Tied 1-1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pc-footer-row">
+          <span class="pc-equation-text" style="color:#93c5fd;">Toss at 03:00 PM · Overcast conditions</span>
+          <span class="pc-crr-badge">5-Day Test</span>
+        </div>
       </div>
 
-      <div class="pc-status-line" style="color:#60a5fa;">Starts Tomorrow · 05:00 AM IST</div>
+      <!-- Match Divider -->
+      <div class="pc-match-divider"></div>
 
-      <div class="pc-scores-block">
-        <div class="pc-team-line">
-          <div class="pc-team-name-col">
-            <span class="pc-team-badge">🇮🇳</span>
-            <strong class="pc-team-code">IND</strong>
+      <!-- UPCOMING MATCH 2: UEFA Champions League -->
+      <div class="pc-match-card">
+        <div class="playcard-top-row">
+          <div class="playcard-badge-info">
+            <span class="pc-live-dot" style="background:#2563eb;">FOOTBALL</span>
+            <span class="pc-match-title" title="UEFA Champions League · Group Stage Matchday 5">UEFA Champions League · Group Stage</span>
           </div>
-          <div class="pc-team-score-col">
-            <span style="color:#9ca3af; font-size:11.5px;">Series Tied 1-1</span>
+          <button class="pc-bell-btn" title="Set Match Reminder" onclick="showToast('⏰ Reminder set for Champions League fixture');">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </button>
+        </div>
+
+        <div class="pc-status-line" style="color:#60a5fa;">Starts Tonight · 01:30 AM IST</div>
+
+        <div class="pc-scores-block">
+          <div class="pc-team-line">
+            <div class="pc-team-name-col">
+              <span class="flag-circle" style="background:#ffffff; color:#111; font-size:10px; font-weight:800;">RM</span>
+              <strong class="pc-team-code">RMA</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <span class="score-yet">Santiago Bernabéu</span>
+            </div>
+          </div>
+
+          <div class="pc-team-line muted">
+            <div class="pc-team-name-col">
+              <span class="flag-circle" style="background:#6cabdd; color:#fff; font-size:10px; font-weight:800;">MC</span>
+              <strong class="pc-team-code">MCI</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <span class="score-yet">Matchday 5</span>
+            </div>
           </div>
         </div>
 
-        <div class="pc-team-line">
-          <div class="pc-team-name-col">
-            <span class="pc-team-badge">🇦🇺</span>
-            <strong class="pc-team-code">AUS</strong>
-          </div>
-          <div class="pc-team-score-col">
-            <span style="color:#9ca3af; font-size:11.5px;">SCG, Sydney</span>
-          </div>
+        <div class="pc-footer-row">
+          <span class="pc-equation-text" style="color:#93c5fd;">Live broadcast on Sony Sports Ten 2</span>
+          <span class="pc-crr-badge">UCL</span>
         </div>
-      </div>
-
-      <div class="pc-footer-row">
-        <span class="pc-equation-text" style="color:#93c5fd;">Toss at 04:30 AM · Dry turning pitch expected</span>
-        <span class="pc-crr-badge">5-Day Test</span>
       </div>
     `,
 
     recent: `
-      <div class="playcard-top-row">
-        <div class="playcard-badge-info">
-          <span class="pc-live-dot" style="background:#059669;">RESULT</span>
-          <span class="pc-match-title" title="Match 6, ICC Men's T20 Qualifier">Match 6, ICC Men's T20 Qualifier</span>
+      <!-- RECENT MATCH 1: NZ vs IND -->
+      <div class="pc-match-card">
+        <div class="playcard-top-row">
+          <div class="playcard-badge-info">
+            <span class="pc-live-dot" style="background:#059669;">RESULT</span>
+            <span class="pc-match-title" title="2nd Test, New Zealand tour of India, 3 Test Series">2nd Test, New Zealand in India</span>
+          </div>
+          <button class="pc-bell-btn" title="View Full Scorecard" onclick="showToast('📊 NZ won by 113 runs. Full scorecard opened.');">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          </button>
         </div>
-        <button class="pc-bell-btn" title="View Full Scorecard" onclick="showToast('📊 Kenya won by 46 runs. Full scorecard opened.');">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-        </button>
+
+        <div class="pc-status-line" style="color:#34d399;">Match Ended · NZ Won by 113 Runs</div>
+
+        <div class="pc-scores-block">
+          <div class="pc-team-line">
+            <div class="pc-team-name-col">
+              <span class="flag-circle" title="New Zealand">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#000000"/><polygon points="10,4 12,9 17,9 13,12 15,17 10,14 5,17 7,12 3,9 8,9" fill="#ffffff"/></svg>
+              </span>
+              <strong class="pc-team-code">NZ</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <strong class="score-runs">259 &amp; 255</strong>
+            </div>
+          </div>
+
+          <div class="pc-team-line muted">
+            <div class="pc-team-name-col">
+              <span class="flag-circle" title="India">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#ff9933"/><circle cx="10" cy="10" r="6" fill="#ffffff"/><circle cx="10" cy="10" r="3" fill="#000080"/><path d="M0 13 H20 V20 H0 Z" fill="#138808"/></svg>
+              </span>
+              <strong class="pc-team-code">IND</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <span class="score-runs" style="color:#d1d5db;">156 &amp; 245</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pc-footer-row">
+          <span class="pc-equation-text" style="color:#6ee7b7;">PoTM: Mitchell Santner (13 wkts)</span>
+          <span class="pc-crr-badge">Pune Test</span>
+        </div>
       </div>
 
-      <div class="pc-status-line" style="color:#34d399;">Match Ended · Kenya Won</div>
+      <!-- Match Divider -->
+      <div class="pc-match-divider"></div>
 
-      <div class="pc-scores-block">
-        <div class="pc-team-line">
-          <div class="pc-team-name-col">
-            <span class="pc-team-badge">🇰🇪</span>
-            <strong class="pc-team-code">KEN</strong>
+      <!-- RECENT MATCH 2: IND vs AFG -->
+      <div class="pc-match-card">
+        <div class="playcard-top-row">
+          <div class="playcard-badge-info">
+            <span class="pc-live-dot" style="background:#059669;">RESULT</span>
+            <span class="pc-match-title" title="ICC Men's T20 World Cup · Super 8 Match">ICC Men's T20 World Cup · Super 8</span>
           </div>
-          <div class="pc-team-score-col">
-            <strong class="score-runs">168/4</strong>
-            <span class="score-overs">(20.0)</span>
+          <button class="pc-bell-btn" title="View Full Scorecard" onclick="showToast('📊 India won by 47 runs. Full scorecard opened.');">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          </button>
+        </div>
+
+        <div class="pc-status-line" style="color:#34d399;">Match Ended · India Won by 47 Runs</div>
+
+        <div class="pc-scores-block">
+          <div class="pc-team-line">
+            <div class="pc-team-name-col">
+              <span class="flag-circle" title="India">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#ff9933"/><circle cx="10" cy="10" r="6" fill="#ffffff"/><circle cx="10" cy="10" r="3" fill="#000080"/><path d="M0 13 H20 V20 H0 Z" fill="#138808"/></svg>
+              </span>
+              <strong class="pc-team-code">IND</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <strong class="score-runs">181/8</strong>
+              <span class="score-overs">(20.0)</span>
+            </div>
+          </div>
+
+          <div class="pc-team-line muted">
+            <div class="pc-team-name-col">
+              <span class="flag-circle" title="Afghanistan">
+                <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="10" fill="#000000"/><path d="M7 0 H13 V20 H7 Z" fill="#cf142b"/><path d="M13 0 H20 V20 H13 Z" fill="#007a3d"/></svg>
+              </span>
+              <strong class="pc-team-code">AFG</strong>
+            </div>
+            <div class="pc-team-score-col">
+              <span class="score-runs" style="color:#d1d5db;">134</span>
+              <span class="score-overs">(20.0)</span>
+            </div>
           </div>
         </div>
 
-        <div class="pc-team-line muted">
-          <div class="pc-team-name-col">
-            <span class="pc-team-badge">🇹🇿</span>
-            <strong class="pc-team-code">TAN</strong>
-          </div>
-          <div class="pc-team-score-col">
-            <span class="score-runs">122</span>
-            <span class="score-overs">(18.2)</span>
-          </div>
+        <div class="pc-footer-row">
+          <span class="pc-equation-text" style="color:#6ee7b7;">PoTM: Suryakumar Yadav (53 off 28)</span>
+          <span class="pc-crr-badge">Kensington Oval</span>
         </div>
-      </div>
-
-      <div class="pc-footer-row">
-        <span class="pc-equation-text" style="color:#6ee7b7;">Kenya won by 46 runs · PoTM: Rakep Patel (64*)</span>
-        <span class="pc-crr-badge">Final</span>
       </div>
     `
   };
