@@ -1016,8 +1016,8 @@ function initFeaturedSeriesPodcast() {
       activePage = targetPage;
 
       if (typeof showToast === 'function') {
-        const desc = activePage === 1 ? 'Page 1: AI Agents & Enterprise Transformation' : 'Page 2: Compute Missions & Semiconductor Fabs';
-        showToast(`🎙️ Featured Series: ${desc}`);
+        const desc = activePage === 1 ? 'Page 1: AI Agents & Human Frontiers' : 'Page 2: Silicon Valley & Compute Reality';
+        showToast(`🎙️ AI Podcasts: ${desc}`);
       }
     }, 200);
   }
